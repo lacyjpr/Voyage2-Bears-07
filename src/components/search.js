@@ -6,7 +6,7 @@ import Geosuggest from "react-geosuggest";
 //import * as actions from "actions";
 import "./search.css";
 
-export class Search extends React.Component {
+class Search extends React.Component {
   onSuggestSelect(suggest) {
     console.log(suggest);
     let latlng = suggest.location;
