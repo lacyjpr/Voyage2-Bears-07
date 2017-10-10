@@ -2,6 +2,7 @@
 
 import React from "react";
 import Geosuggest from "react-geosuggest";
+import Slider from "react-rangeslider";
 // import { connect } from "react-redux";
 //import * as actions from "actions";
 import "./search.css";
