@@ -1,3 +1,52 @@
+input,
+select,
+button,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-appearance: none;
+  font: inherit;
+  color: inherit;
+}
+
+.container {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  max-width: 612px;
+  max-width: 34rem;
+}
+
+a {
+  color: #3d464d;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+a:hover,
+a:focus {
+  color: #267dc0;
+}
+
+h1 {
+  font-size: 72px;
+  font-size: 4rem;
+  font-weight: 100;
+  margin-bottom: 0.5em;
+  color: #267dc0;
+}
+
+.subheader {
+  font-weight: 300;
+  margin-bottom: 1.5em;
+}
+
+.hint {
+  color: #ccc;
+  margin: 2em 0;
+}
+
 .geosuggest__suggests--hidden {
   display: none;
 }
