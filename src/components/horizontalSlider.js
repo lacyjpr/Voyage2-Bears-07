@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Slider from "react-rangeslider";
-import "react-rangeslider/lib/index.css";
+import React, { Component } from 'react';
+import Slider from 'react-rangeslider';
+import 'react-rangeslider/lib/index.css';
 
 class HorizontalSlider extends Component {
   constructor(props, context) {
@@ -11,7 +11,7 @@ class HorizontalSlider extends Component {
   }
 
   handleChangeStart = () => {
-    console.log("Change event started");
+    console.log('Change event started');
   };
 
   handleChange = value => {
@@ -21,7 +21,7 @@ class HorizontalSlider extends Component {
   };
 
   handleChangeComplete = () => {
-    console.log("Change event completed");
+    console.log('Change event completed');
   };
 
   render() {

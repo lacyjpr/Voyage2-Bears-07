@@ -1,12 +1,12 @@
 // /* global google */
 
-import React from "react";
-import Geosuggest from "react-geosuggest";
+import React from 'react';
+import Geosuggest from 'react-geosuggest';
 // import { connect } from "react-redux";
 //import * as actions from "actions";
 
-import HorizontalSlider from "./horizontalSlider";
-import "./search.css";
+import HorizontalSlider from './horizontalSlider';
+import './search.css';
 
 class Search extends React.Component {
   onSuggestSelect(suggest) {
@@ -16,7 +16,7 @@ class Search extends React.Component {
   }
 
   onSuggestNoResults(userInput) {
-    console.log("onSuggestNoResults for :" + userInput);
+    console.log('onSuggestNoResults for :' + userInput);
   }
 
   render() {

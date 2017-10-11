@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Search from "./components/search";
+import Search from './components/search';
 
 class App extends Component {
   render() {
