@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
+import { connect } from 'react-redux';
+import * as actions from './../actions/actions';
 
 class HorizontalSlider extends Component {
   constructor(props, context) {
@@ -8,6 +10,11 @@ class HorizontalSlider extends Component {
     this.state = {
       value: 10,
     };
+  }
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(actions.getRadius(this.state.value));
   }
 
   handleChangeStart = () => {
@@ -22,6 +29,8 @@ class HorizontalSlider extends Component {
 
   handleChangeComplete = () => {
     console.log('Change event completed');
+    const { dispatch } = this.props;
+    dispatch(actions.getRadius(this.state.value));
   };
 
   render() {
@@ -42,4 +51,4 @@ class HorizontalSlider extends Component {
   }
 }
 
-export default HorizontalSlider;
+export default connect()(HorizontalSlider);
