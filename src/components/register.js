@@ -1,35 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Register extends Component {
 
-  constructor() {
-    super();
-    this.renderLogin = this.renderLogin.bind(this);
-    this.state = {
-      uid: null
-    }
-  }
-
-  renderLogin() {
-    return (
-      <nav className="register">
-        <button className="github" onClick={() => this.authenticate('github')}>Log in with Github</button>
-        <button className="facebook" onClick={() => this.authenticate('facebook')}>Log in with Facebook</button>
-      </nav>
-    )
-  }
-
   render() {
-    //check if not logged in
-    if(!this.state.uid) {
-      return <div>{this.renderLogin()}</div>
-    } 
-
     return (
-      <p>Hello!</p>
-    )
+      <div>
+        <form>
+          <input type="text" placeholder="Enter your email" />
+          <input type="password" placeholder="Enter your password" />
+          <button className="btn btn-info">Sign Up</button>
+        </form>
+        <Link to="/">Go Back!</Link>
+      </div>
+    );
   }
-
 }
 
 export default Register;

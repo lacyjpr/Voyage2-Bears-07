@@ -2,17 +2,24 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
- render() {
-   return (
-     <header>
-       <nav>
-         <ul>
-           <li><Link to='/register'>Sign Up!</Link></li>
-         </ul>
-       </nav>
-     </header>
+  render() { 
+    return (
+      <header>
+        <nav>
+          <div>
+            {this.props.user  ? 
+              <button onClick={this.props.logout}>Logout</button>
+            :
+              <div>
+                <Link to="signin">Sign in!</Link>
+                <Link to="register">Sign Up!</Link>
+              </div>
+            }
+          </div>
+        </nav>
+      </header>
    );
- }
+  }
 }
 
 export default Header;
