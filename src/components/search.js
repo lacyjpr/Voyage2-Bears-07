@@ -14,6 +14,7 @@ class Search extends React.Component {
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
     this.onSuggestNoResults = this.onSuggestNoResults.bind(this);
   }
+
   onSuggestSelect(suggest) {
     let { dispatch } = this.props;
     console.log(suggest);
