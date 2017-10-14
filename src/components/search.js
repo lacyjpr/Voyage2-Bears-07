@@ -2,17 +2,24 @@
 
 import React from 'react';
 import Geosuggest from 'react-geosuggest';
-// import { connect } from "react-redux";
-//import * as actions from "actions";
+import { connect } from 'react-redux';
+import * as actions from './../actions/actions';
 
 import HorizontalSlider from './horizontalSlider';
 import './search.css';
 
 class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onSuggestSelect = this.onSuggestSelect.bind(this);
+    this.onSuggestNoResults = this.onSuggestNoResults.bind(this);
+  }
   onSuggestSelect(suggest) {
+    let { dispatch } = this.props;
     console.log(suggest);
     let latlng = suggest.location;
     console.log(latlng);
+    dispatch(actions.getCenter(latlng));
   }
 
   onSuggestNoResults(userInput) {
@@ -23,7 +30,6 @@ class Search extends React.Component {
     return (
       <div>
         <Geosuggest
-          // onChange={this.onChange}
           onSuggestSelect={this.onSuggestSelect}
           onSuggestNoResults={this.onSuggestNoResults}
         />
@@ -33,4 +39,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default connect()(Search);

@@ -4,3 +4,10 @@ export const getRadius = radius => {
     radius,
   };
 };
+
+export const getCenter = center => {
+  return {
+    type: 'SET_CENTER',
+    center,
+  };
+};
