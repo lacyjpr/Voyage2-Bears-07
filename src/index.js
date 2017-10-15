@@ -13,8 +13,10 @@ import App from './App';
 const store = configure();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
+  <Provider store={store}>  
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
