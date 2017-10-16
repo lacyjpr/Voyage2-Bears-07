@@ -13,6 +13,8 @@ class Search extends React.Component {
     super(props);
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
     this.onSuggestNoResults = this.onSuggestNoResults.bind(this);
+    let { dispatch } = this.props;
+    dispatch(actions.getCenter({ lat: 37.09024, lng: -95.71289100000001 }));
   }
 
   onSuggestSelect(suggest) {
