@@ -57,17 +57,17 @@ h1 {
 }
 
 .geosuggest__input {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   border: 2px solid transparent;
   box-shadow: 0 0 1px #3d464d;
-  padding: 0.5em 1em;
+  padding: 0;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
   transition: border 0.2s, box-shadow 0.2s;
 }
 
 .geosuggest__suggests {
-  width: 55%;
+  width: 100%;
   top: 100%;
   left: 0;
   right: 0;

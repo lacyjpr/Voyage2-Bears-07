@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
-import 'react-rangeslider/lib/index.css';
+import './horizontalSlider.css';
 import { connect } from 'react-redux';
 import * as actions from './../actions/actions';
 
