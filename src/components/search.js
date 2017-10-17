@@ -1,5 +1,3 @@
-// /* global google */
-
 import React from 'react';
 import Geosuggest from 'react-geosuggest';
 import { connect } from 'react-redux';
@@ -12,8 +10,8 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
-    this.onSuggestNoResults = this.onSuggestNoResults.bind(this);
     let { dispatch } = this.props;
+    // Initialize the map with 'United States' as the center
     dispatch(actions.getCenter({ lat: 37.09024, lng: -95.71289100000001 }));
   }
 
@@ -25,17 +23,10 @@ class Search extends React.Component {
     dispatch(actions.getCenter(latlng));
   }
 
-  onSuggestNoResults(userInput) {
-    console.log('onSuggestNoResults for :' + userInput);
-  }
-
   render() {
     return (
       <div>
-        <Geosuggest
-          onSuggestSelect={this.onSuggestSelect}
-          onSuggestNoResults={this.onSuggestNoResults}
-        />
+        <Geosuggest onSuggestSelect={this.onSuggestSelect} />
         <HorizontalSlider />
       </div>
     );
