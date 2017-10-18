@@ -25,7 +25,6 @@ class Main extends Component {
     auth.signInWithPopup(providerFacebook).then(result => {
       console.log(result);
       let user = result.user;
-      let token = result.credential.accessToken;
       this.setState({ user });
       window.location="/";
     });
@@ -37,7 +36,6 @@ class Main extends Component {
       .then(result => {
         console.log(result);
         let user = result.user;
-        let token = result.credential.accessToken;
         this.setState({ user });
         window.location = "/";        
       });
