@@ -3,9 +3,6 @@ import Header from './components/header';
 import Main from './components/main';
 import { auth } from './firebase.js';
 
-import Search from './components/search';
-import Map from './components/map';
-
 class App extends Component {
   constructor() {
     super();
