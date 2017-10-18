@@ -17,10 +17,6 @@ class HorizontalSlider extends Component {
     dispatch(actions.getRadius(this.state.value));
   }
 
-  handleChangeStart = () => {
-    console.log('Change event started');
-  };
-
   handleChange = value => {
     this.setState({
       value: value,
@@ -28,7 +24,6 @@ class HorizontalSlider extends Component {
   };
 
   handleChangeComplete = () => {
-    console.log('Change event completed');
     const { dispatch } = this.props;
     dispatch(actions.getRadius(this.state.value));
   };
@@ -41,7 +36,6 @@ class HorizontalSlider extends Component {
           min={0}
           max={100}
           value={value}
-          onChangeStart={this.handleChangeStart}
           onChange={this.handleChange}
           onChangeComplete={this.handleChangeComplete}
         />
