@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 
+import Search from './search';
+import Map from './map';
+
 class Home extends Component {
   render() {
-    return <p>Meet and Code</p>;
+    return (
+      <div>
+        <p>Meet and Code</p>
+        <Search />
+        <Map />
+      </div>
+    );
   }
 }
 
