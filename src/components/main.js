@@ -9,7 +9,6 @@ import {
 
 
 import SignIn from "./signin";
-import Register from "./register";
 import Home from "./home";
 
 class Main extends Component {
@@ -24,7 +23,9 @@ class Main extends Component {
   
   loginFacebook() {
     auth.signInWithPopup(providerFacebook).then(result => {
+      console.log(result);
       let user = result.user;
+      let token = result.credential.accessToken;
       this.setState({ user });
       window.location="/";
     });
@@ -34,7 +35,9 @@ class Main extends Component {
     auth
       .signInWithPopup(providerGoogle)
       .then(result => {
+        console.log(result);
         let user = result.user;
+        let token = result.credential.accessToken;
         this.setState({ user });
         window.location = "/";        
       });
@@ -55,7 +58,6 @@ class Main extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/signin" render={(...props) => <SignIn loginFacebook={this.loginFacebook} loginGoogle={this.loginGoogle} loginGitHub={this.loginGitHub} />} />
-          <Route path="/register" component={Register} />
         </Switch>
       </main>;
   }

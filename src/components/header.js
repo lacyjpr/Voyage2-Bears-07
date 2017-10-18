@@ -12,7 +12,6 @@ class Header extends Component {
             :
               <div>
                 <Link to="signin">Sign in!</Link>
-                <Link to="register">Sign Up!</Link>
               </div>
             }
           </div>

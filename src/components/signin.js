@@ -25,11 +25,7 @@ class SignIn extends Component {
             Log in with Github!!
           </button>
         </div>
-        <form>
-          <input type="text" placeholder="Enter your email" />
-          <input type="password" placeholder="Enter your password" />
-          <button className="btn btn-info">Sign In</button>
-        </form>
+
         <Link to="/">Go Back!</Link>
       </div>;
   }

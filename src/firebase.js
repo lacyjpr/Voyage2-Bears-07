@@ -16,4 +16,7 @@ const config = {
   export const providerGitHub = new firebase.auth.GithubAuthProvider();
   export const auth = firebase.auth();
 
+  providerGoogle.addScope("https://www.googleapis.com/auth/glass.location");
+  providerFacebook.addScope("user_location");
+
   export default firebase;
