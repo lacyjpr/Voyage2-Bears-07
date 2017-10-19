@@ -31,6 +31,7 @@ class App extends Component {
     );
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
@@ -39,6 +40,23 @@ class App extends Component {
       }
     });
   }
+||||||| merged common ancestors
+    componentDidMount() {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          this.setState({ user });
+        }
+      });
+    }  
+=======
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      }
+    });
+  }
+>>>>>>> develop
 }
 
 export default App;
