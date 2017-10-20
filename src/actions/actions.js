@@ -11,3 +11,9 @@ export const getCenter = center => {
     center,
   };
 };
+export const login = uid => {
+  return {
+    type: 'LOGIN',
+    uid,
+  };
+};
