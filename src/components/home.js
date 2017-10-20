@@ -10,6 +10,7 @@ class Home extends Component {
         console.log(user);
         let { dispatch } = this.props;
         dispatch(actions.login(user.uid));
+        dispatch(actions.startAddProfile());
       }
     });
   }
