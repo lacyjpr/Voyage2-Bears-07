@@ -14,7 +14,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.profile.profile);
+    console.log(this.props.profile);
   }
 
   handleSubmit(e) {
@@ -34,7 +34,7 @@ class Profile extends Component {
 
   renderProfile = () => {
     let { profile } = this.props;
-    if (profile === undefined || profile === null) {
+    if (profile === undefined || profile === null || profile === {}) {
       return (
         <div className="edit-profile">
           <form onSubmit={this.handleSubmit}>
@@ -84,7 +84,7 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    profile: state.profile.profile || {},
+    profile: state.profile.profile,
   };
 };
 

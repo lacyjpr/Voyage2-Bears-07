@@ -21,6 +21,7 @@ export const startUpdateProfile = (userNameText, locationText) => {
       location: locationText,
     };
     let uid = getState().auth.uid;
+    console.log('startUpdateProfile ', uid);
     let profilesRef = firebaseRef.child(`users/${uid}/`).push(profile);
 
     return profilesRef.then(() => {
@@ -32,6 +33,7 @@ export const startUpdateProfile = (userNameText, locationText) => {
 export const startAddProfile = () => {
   return (dispatch, getState) => {
     let uid = getState().auth.uid;
+    console.log('store ', uid);
     let profileRef = firebaseRef.child(`users/${uid}/profile`);
 
     return profileRef.once('value').then(snapshot => {
