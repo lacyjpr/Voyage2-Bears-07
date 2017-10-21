@@ -33,8 +33,11 @@ class Profile extends Component {
   }
 
   renderProfile = () => {
-    let { profile } = this.props;
-    if (profile === undefined || profile === null || profile === {}) {
+    //let { profile } = this.props;
+    if (
+      this.props.profile === undefined ||
+      Object.keys(this.props.profile).length === 0
+    ) {
       return (
         <div className="edit-profile">
           <form onSubmit={this.handleSubmit}>
@@ -65,8 +68,8 @@ class Profile extends Component {
     } else {
       return (
         <div className="profile">
-          <p>{profile.userName}</p>
-          <p>{profile.location}</p>
+          <p>{this.props.profile.userName}</p>
+          <p>{this.props.profile.location}</p>
         </div>
       );
     }
@@ -85,6 +88,7 @@ class Profile extends Component {
 const mapStateToProps = state => {
   return {
     profile: state.profile.profile,
+    auth: state.auth,
   };
 };
 

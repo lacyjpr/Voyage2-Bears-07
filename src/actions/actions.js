@@ -22,7 +22,7 @@ export const startUpdateProfile = (userNameText, locationText) => {
     };
     let uid = getState().auth.uid;
     console.log('startUpdateProfile ', uid);
-    let profilesRef = firebaseRef.child(`users/${uid}/`).push(profile);
+    let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
 
     return profilesRef.then(() => {
       dispatch(addProfile({ profile }));
