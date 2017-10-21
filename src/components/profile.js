@@ -66,9 +66,11 @@ class Profile extends Component {
         </div>
       );
     } else {
+      console.log(this.props.profile.username);
+      console.log(this.props.profile.location);
       return (
         <div className="profile">
-          <p>{this.props.profile.userName}</p>
+          <p>{this.props.profile.username}</p>
           <p>{this.props.profile.location}</p>
         </div>
       );
