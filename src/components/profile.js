@@ -14,19 +14,27 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.profile);
+    console.log(this.props.profile.profile);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let { dispatch } = this.props;
-    let userNameText = this.refs.editUserName.Value;
+    let userNameText = this.refs.editUserName.value;
+    console.log(userNameText);
     let locationText = this.refs.editLocation.value;
+    console.log(locationText);
+
+    if (userNameText.length > 0 && locationText.length > 0) {
+      dispatch(actions.startUpdateProfile(userNameText, locationText));
+    } else {
+      this.refs.editUserName.focus();
+    }
   }
 
   renderProfile = () => {
     let { profile } = this.props;
-    if (profile === undefined) {
+    if (profile === undefined || profile === null) {
       return (
         <div className="edit-profile">
           <form onSubmit={this.handleSubmit}>
@@ -76,7 +84,7 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    profile: state.profile.profile,
+    profile: state.profile.profile || {},
   };
 };
 

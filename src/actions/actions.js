@@ -14,6 +14,21 @@ export const addProfile = profile => {
   };
 };
 
+export const startUpdateProfile = (userNameText, locationText) => {
+  return (dispatch, getState) => {
+    let profile = {
+      username: userNameText,
+      location: locationText,
+    };
+    let uid = getState().auth.uid;
+    let profilesRef = firebaseRef.child(`users/${uid}/`).push(profile);
+
+    return profilesRef.then(() => {
+      dispatch(addProfile({ profile }));
+    });
+  };
+};
+
 export const startAddProfile = () => {
   return (dispatch, getState) => {
     let uid = getState().auth.uid;
