@@ -14,6 +14,8 @@ class Profile extends Component {
   }
 
   componentDidMount() {
+    let { dispatch } = this.props;
+    dispatch(actions.startAddProfile());
     console.log(this.props.profile);
   }
 
