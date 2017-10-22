@@ -16,17 +16,6 @@ export const addProfile = profile => {
 };
 
 export const startUpdateProfile = (userNameText, locationText) => {
-  // const apiURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-  // const apiKey = '&key=AIzaSyD9kyxI8tmXnAKCJs0YWo2iGVD_R__h7dY';
-  // let location = locationText;
-
-  // let url = `${apiURL}${location}${apiKey}`;
-
-  // axios.get(url).then(response => {
-  //   let latLng = response.data.results[0].geometry.location;
-  //   console.log(latLng);
-  // });
-
   return (dispatch, getState) => {
     const apiURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
     const apiKey = '&key=AIzaSyD9kyxI8tmXnAKCJs0YWo2iGVD_R__h7dY';
