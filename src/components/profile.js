@@ -27,7 +27,7 @@ class Profile extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    //e.preventDefault();
     let { dispatch } = this.props;
     let userNameText = this.refs.editUserName.value;
     console.log(userNameText);
@@ -35,6 +35,7 @@ class Profile extends Component {
     console.log(locationText);
 
     if (userNameText.length > 0 && locationText.length > 0) {
+      //this.setState({ editable: !this.state.editable });
       dispatch(actions.startUpdateProfile(userNameText, locationText));
     } else {
       this.refs.editUserName.focus();
@@ -50,7 +51,7 @@ class Profile extends Component {
     if (
       this.props.profile === undefined ||
       Object.keys(this.props.profile).length === 0 ||
-      this.state.editable
+      this.state.editable === true
     ) {
       return (
         <div className="edit-profile">
@@ -75,7 +76,7 @@ class Profile extends Component {
               />
             </div>
 
-            <button className="submit-profile" onClick={this.toggleEdit}>
+            <button type="submit" className="submit-profile">
               Submit Profile
             </button>
           </form>
