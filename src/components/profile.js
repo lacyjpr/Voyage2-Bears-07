@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './../actions/actions';
+import { auth } from './../firebase.js';
 
 class Profile extends Component {
   constructor(props) {
@@ -14,9 +15,14 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    let { dispatch } = this.props;
-    dispatch(actions.startAddProfile());
-    console.log(this.props.profile);
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        console.log(user);
+        let { dispatch } = this.props;
+        dispatch(actions.login(user.uid));
+        dispatch(actions.startAddProfile());
+      }
+    });
   }
 
   handleSubmit(e) {
