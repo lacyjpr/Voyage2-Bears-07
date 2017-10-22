@@ -9,6 +9,7 @@ import {
 
 import SignIn from './signin';
 import Home from './home';
+import Profile from './profile';
 
 class Main extends Component {
   constructor() {
@@ -60,6 +61,7 @@ class Main extends Component {
               />
             )}
           />
+          <Route path="/profile" component={Profile} />>
         </Switch>
       </main>
     );
