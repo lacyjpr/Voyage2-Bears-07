@@ -12,6 +12,7 @@ class Profile extends Component {
 
     this.renderProfile = this.renderProfile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -40,11 +41,16 @@ class Profile extends Component {
     }
   }
 
+  toggleEdit = () => {
+    this.setState({ editable: !this.state.editable });
+  };
+
   renderProfile = () => {
     //let { profile } = this.props;
     if (
       this.props.profile === undefined ||
-      Object.keys(this.props.profile).length === 0
+      Object.keys(this.props.profile).length === 0 ||
+      this.state.editable
     ) {
       return (
         <div className="edit-profile">
@@ -69,7 +75,9 @@ class Profile extends Component {
               />
             </div>
 
-            <button className="submit-profile">Submit Profile</button>
+            <button className="submit-profile" onClick={this.toggleEdit}>
+              Submit Profile
+            </button>
           </form>
         </div>
       );
@@ -80,6 +88,9 @@ class Profile extends Component {
         <div className="profile">
           <p>{this.props.profile.username}</p>
           <p>{this.props.profile.location}</p>
+          <button className="editTodoBtn" onClick={this.toggleEdit}>
+            Edit
+          </button>
         </div>
       );
     }

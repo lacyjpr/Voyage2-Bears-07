@@ -1,4 +1,5 @@
 import { firebaseRef } from '../firebase';
+import axios from 'axios';
 
 export const login = uid => {
   return {
@@ -18,6 +19,9 @@ export const startUpdateProfile = (userNameText, locationText) => {
   const apiURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
   const apiKey = '&key=AIzaSyD9kyxI8tmXnAKCJs0YWo2iGVD_R__h7dY';
   let location = locationText;
+
+  let url = `${apiURL}${location}${apiKey}`;
+  console.log('URL', url);
 
   return (dispatch, getState) => {
     let profile = {
