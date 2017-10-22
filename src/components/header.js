@@ -8,7 +8,10 @@ class Header extends Component {
         <nav>
           <div>
             {this.props.user ? (
-              <button onClick={this.props.logout}>Logout</button>
+              <div>
+                <Link to="profile">Profile</Link>
+                <button onClick={this.props.logout}>Logout</button>
+              </div>
             ) : (
               <div>
                 <Link to="signin">Sign in!</Link>
