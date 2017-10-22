@@ -10,6 +10,7 @@ class Header extends Component {
             {this.props.user ? (
               <div>
                 <Link to="profile">Profile</Link>
+                <Link to="messages">Messages</Link>
                 <button onClick={this.props.logout}>Logout</button>
               </div>
             ) : (
