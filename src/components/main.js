@@ -63,7 +63,10 @@ class Main extends Component {
             )}
           />
           <Route path="/profile" component={Profile} />>
-          <Route path="/messages" render={(...props) => <Messages />} />
+          <Route
+            path="/messages"
+            render={() => <Messages user={this.props.user} />}
+          />
         </Switch>
       </main>
     );

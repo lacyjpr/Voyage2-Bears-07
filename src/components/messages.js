@@ -9,6 +9,7 @@ class Messages extends Component {
     this.state = {
       message: '',
       messages: [],
+      username: '',
     };
   }
 
@@ -31,6 +32,7 @@ class Messages extends Component {
     console.log(`Update message: ${event.target.value}`);
     this.setState({
       message: event.target.value,
+      username: this.props.user.displayName,
     });
   }
 
@@ -39,6 +41,7 @@ class Messages extends Component {
     const nextMessage = {
       id: this.state.messages.length,
       text: this.state.message,
+      username: this.props.user.displayName,
     };
 
     firebase
@@ -49,18 +52,29 @@ class Messages extends Component {
 
   render() {
     const currentMessages = this.state.messages.map((message, i) => {
-      return <li key={message.id}>{message.text}</li>;
+      return (
+        <li key={message.id}>
+          <div className="message">Message: {message.text}</div>
+          <div className="username">User: {message.username}</div>
+        </li>
+      );
     });
 
     return (
       <div>
-        <ol>{currentMessages}</ol>
-        <input
-          onChange={this.updateMessage}
-          type="text"
-          placeholder="message"
-        />
-        <button onClick={this.submitMessage}>Submit Message</button>
+        {this.props.user ? (
+          <div>
+            <ol>{currentMessages}</ol>
+            <input
+              onChange={this.updateMessage}
+              type="text"
+              placeholder="message"
+            />
+            <button onClick={this.submitMessage}>Submit Message</button>
+          </div>
+        ) : (
+          <div>You must sign in to view and submit messages!</div>
+        )}
       </div>
     );
   }
