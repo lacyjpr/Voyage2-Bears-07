@@ -1,4 +1,5 @@
 import { firebaseRef } from '../firebase';
+import axios from 'axios';
 
 export const login = uid => {
   return {
@@ -16,16 +17,26 @@ export const addProfile = profile => {
 
 export const startUpdateProfile = (userNameText, locationText) => {
   return (dispatch, getState) => {
-    let profile = {
-      username: userNameText,
-      location: locationText,
-    };
-    let uid = getState().auth.uid;
-    console.log('startUpdateProfile ', uid);
-    let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
+    const apiURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+    const apiKey = '&key=AIzaSyD9kyxI8tmXnAKCJs0YWo2iGVD_R__h7dY';
+    let location = locationText;
+    let url = `${apiURL}${location}${apiKey}`;
+    axios.get(url).then(response => {
+      let latLng = response.data.results[0].geometry.location;
+      console.log(latLng);
+      let profile = {
+        username: userNameText,
+        location: locationText,
+        latLng,
+      };
+      let uid = getState().auth.uid;
+      console.log('startUpdateProfile ', uid);
+      let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
 
-    return profilesRef.then(() => {
-      dispatch(addProfile({ profile }));
+      return profilesRef.then(() => {
+        dispatch(addProfile({ profile }));
+        window.location = '/profile';
+      });
     });
   };
 };
