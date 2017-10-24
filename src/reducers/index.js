@@ -3,10 +3,12 @@ import { combineReducers } from 'redux';
 import search from './searchReducers';
 import auth from './authReducer';
 import profile from './profileReducer';
+import users from './usersReducer';
 
 export const reducer = combineReducers({
   //TODO: Add reducers here
   search,
   auth,
   profile,
+  users,
 });
