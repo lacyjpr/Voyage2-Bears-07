@@ -36,7 +36,6 @@ export const startUpdateProfile = (userNameText, locationText) => {
     let location = locationText;
     let url = `${apiURL}${location}${apiKey}`;
     axios.get(url).then(response => {
-      let res = response.data;
       let latLng = response.data.results[0].geometry.location;
       let profile = {
         username: userNameText,
