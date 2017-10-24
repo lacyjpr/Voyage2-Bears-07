@@ -54,3 +54,31 @@ export const startAddProfile = () => {
     });
   };
 };
+
+export const addUsers = users => {
+  return {
+    type: 'ADD_USERS',
+    users,
+  };
+};
+
+export const startAddUsers = () => {
+  return (dispatch, getState) => {
+    let profileRef = firebaseRef.child('users/');
+
+    return profileRef.once('value').then(snapshot => {
+      let users = snapshot.val() || {};
+      let parsedUsers = [];
+
+      // Get users object from firebase into an array
+      Object.keys(users).forEach(UID => {
+        parsedUsers.push({
+          id: UID,
+          ...users[UID],
+        });
+      });
+      console.log(parsedUsers);
+      dispatch(addUsers(parsedUsers));
+    });
+  };
+};
