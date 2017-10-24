@@ -37,16 +37,13 @@ export const startUpdateProfile = (userNameText, locationText) => {
     let url = `${apiURL}${location}${apiKey}`;
     axios.get(url).then(response => {
       let res = response.data;
-      console.log(res);
       let latLng = response.data.results[0].geometry.location;
-      console.log(latLng);
       let profile = {
         username: userNameText,
         location: locationText,
         latLng,
       };
       let uid = getState().auth.uid;
-      console.log('startUpdateProfile ', uid);
       let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
 
       return profilesRef.then(() => {
@@ -93,7 +90,6 @@ export const startAddUsers = () => {
           ...users[UID],
         });
       });
-      console.log(parsedUsers);
       dispatch(addUsers(parsedUsers));
     });
   };

@@ -13,7 +13,6 @@ class Map extends React.Component {
 
   componentDidUpdate() {
     let markers = this.props.users;
-    console.log(markers);
     this.map = new google.maps.Map(this.refs.map, {
       center: this.props.center,
       zoom: 2,
