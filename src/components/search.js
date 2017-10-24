@@ -20,7 +20,11 @@ class Search extends React.Component {
     console.log(suggest);
     let latlng = suggest.location;
     console.log(latlng);
-    dispatch(actions.getCenter(latlng));
+    if (latlng === undefined) {
+      console.log('Place not found');
+    } else {
+      dispatch(actions.getCenter(latlng));
+    }
   }
 
   render() {
