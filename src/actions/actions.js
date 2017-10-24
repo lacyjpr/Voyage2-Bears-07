@@ -36,19 +36,24 @@ export const startUpdateProfile = (userNameText, locationText) => {
     let location = locationText;
     let url = `${apiURL}${location}${apiKey}`;
     axios.get(url).then(response => {
-      let latLng = response.data.results[0].geometry.location;
-      let profile = {
-        username: userNameText,
-        location: locationText,
-        latLng,
-      };
-      let uid = getState().auth.uid;
-      let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
+      console.log(response.data.status);
+      if (response.data.status === 'ZERO_RESULTS') {
+        console.log('Error: Place not found');
+      } else {
+        let latLng = response.data.results[0].geometry.location;
+        let profile = {
+          username: userNameText,
+          location: locationText,
+          latLng,
+        };
+        let uid = getState().auth.uid;
+        let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
 
-      return profilesRef.then(() => {
-        dispatch(addProfile({ profile }));
-        window.location = '/profile';
-      });
+        return profilesRef.then(() => {
+          dispatch(addProfile({ profile }));
+          window.location = '/profile';
+        });
+      }
     });
   };
 };
