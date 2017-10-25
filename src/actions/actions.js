@@ -1,6 +1,20 @@
 import { firebaseRef } from '../firebase';
 import axios from 'axios';
 
+export const getRadius = radius => {
+  return {
+    type: 'SET_RADIUS',
+    radius,
+  };
+};
+
+export const getCenter = center => {
+  return {
+    type: 'SET_CENTER',
+    center,
+  };
+};
+
 export const login = uid => {
   return {
     type: 'LOGIN',
@@ -22,21 +36,24 @@ export const startUpdateProfile = (userNameText, locationText) => {
     let location = locationText;
     let url = `${apiURL}${location}${apiKey}`;
     axios.get(url).then(response => {
-      let latLng = response.data.results[0].geometry.location;
-      console.log(latLng);
-      let profile = {
-        username: userNameText,
-        location: locationText,
-        latLng,
-      };
-      let uid = getState().auth.uid;
-      console.log('startUpdateProfile ', uid);
-      let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
+      console.log(response.data.status);
+      if (response.data.status === 'ZERO_RESULTS') {
+        console.log('Error: Place not found');
+      } else {
+        let latLng = response.data.results[0].geometry.location;
+        let profile = {
+          username: userNameText,
+          location: locationText,
+          latLng,
+        };
+        let uid = getState().auth.uid;
+        let profilesRef = firebaseRef.child(`users/${uid}/`).set(profile);
 
-      return profilesRef.then(() => {
-        dispatch(addProfile({ profile }));
-        window.location = '/profile';
-      });
+        return profilesRef.then(() => {
+          dispatch(addProfile({ profile }));
+          window.location = '/profile';
+        });
+      }
     });
   };
 };
@@ -77,7 +94,6 @@ export const startAddUsers = () => {
           ...users[UID],
         });
       });
-      console.log(parsedUsers);
       dispatch(addUsers(parsedUsers));
     });
   };
