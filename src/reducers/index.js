@@ -4,6 +4,7 @@ import search from './searchReducers';
 import auth from './authReducer';
 import profile from './profileReducer';
 import users from './usersReducer';
+import filteredUsers from './filteredUsersReducer';
 
 export const reducer = combineReducers({
   //TODO: Add reducers here
@@ -11,4 +12,5 @@ export const reducer = combineReducers({
   auth,
   profile,
   users,
+  filteredUsers,
 });

@@ -26,6 +26,13 @@ class HorizontalSlider extends Component {
   handleChangeComplete = () => {
     const { dispatch } = this.props;
     dispatch(actions.getRadius(this.state.value));
+    dispatch(
+      actions.filterUsers(
+        this.props.users,
+        this.props.center,
+        this.props.radius
+      )
+    );
   };
 
   render() {
@@ -45,4 +52,12 @@ class HorizontalSlider extends Component {
   }
 }
 
-export default connect()(HorizontalSlider);
+const mapStateToProps = state => {
+  return {
+    users: state.users,
+    center: state.search.center,
+    radius: state.search.radius,
+  };
+};
+
+export default connect(mapStateToProps)(HorizontalSlider);

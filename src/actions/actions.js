@@ -1,3 +1,4 @@
+/* global google */
 import { firebaseRef } from '../firebase';
 import axios from 'axios';
 
@@ -96,5 +97,40 @@ export const startAddUsers = () => {
       });
       dispatch(addUsers(parsedUsers));
     });
+  };
+};
+
+export const addFilteredUsers = filteredUsers => {
+  return {
+    type: 'ADD_FILTERED_USERS',
+    filteredUsers,
+  };
+};
+
+export const filterUsers = (users, center, radius) => {
+  return dispatch => {
+    let filteredUsers = [];
+    let middle = new google.maps.LatLng(center.lat, center.lng);
+    if (center === undefined) {
+      filteredUsers = users;
+    } else {
+      for (let i = 0; i < users.length; i++) {
+        let position = new google.maps.LatLng(
+          users[i].latLng.lat,
+          users[i].latLng.lng
+        );
+        if (
+          google.maps.geometry.spherical.computeDistanceBetween(
+            position,
+            middle
+          ) <=
+          radius * 1000
+        ) {
+          filteredUsers.push(users[i]);
+        }
+      }
+    }
+    console.log(filteredUsers);
+    dispatch(addFilteredUsers(filteredUsers));
   };
 };

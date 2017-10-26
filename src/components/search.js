@@ -22,8 +22,28 @@ class Search extends React.Component {
     console.log(latlng);
     if (latlng === undefined) {
       console.log('Place not found');
+      console.log(this.props.users);
+      console.log(this.props.center);
+      console.log(this.props.radius);
+      dispatch(
+        actions.filterUsers(
+          this.props.users,
+          this.props.center,
+          this.props.radius
+        )
+      );
     } else {
       dispatch(actions.getCenter(latlng));
+      console.log(this.props.users);
+      console.log(this.props.center);
+      console.log(this.props.radius);
+      dispatch(
+        actions.filterUsers(
+          this.props.users,
+          this.props.center,
+          this.props.radius
+        )
+      );
     }
   }
 
@@ -31,10 +51,19 @@ class Search extends React.Component {
     return (
       <div>
         <Geosuggest onSuggestSelect={this.onSuggestSelect} />
+        <p className="tip">*Search "World" to see all users.</p>
         <HorizontalSlider />
       </div>
     );
   }
 }
 
-export default connect()(Search);
+const mapStateToProps = state => {
+  return {
+    users: state.users,
+    center: state.search.center,
+    radius: state.search.radius,
+  };
+};
+
+export default connect(mapStateToProps)(Search);
