@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import * as actions from './../actions/actions';
 import { auth } from './../firebase.js';
 
+import Search from './search';
+import Map from './map';
+import UsersList from './usersList';
+
 class Home extends Component {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
@@ -11,12 +15,20 @@ class Home extends Component {
         let { dispatch } = this.props;
         dispatch(actions.login(user.uid));
         dispatch(actions.startAddProfile());
+        dispatch(actions.startAddUsers());
       }
     });
   }
 
   render() {
-    return <p>Meet and Code</p>;
+    return (
+      <div>
+        <p>Meet and Code</p>
+        <Search />
+        <Map />
+        <UsersList />
+      </div>
+    );
   }
 }
 
