@@ -9,13 +9,20 @@ import UsersList from './usersList';
 
 class Home extends Component {
   componentDidMount() {
+    console.log(this.props.users);
+    if (typeof this.props.users !== 'undefined') {
+      return;
+    } else {
+      let { dispatch } = this.props;
+      dispatch(actions.startAddUsers());
+    }
+
     auth.onAuthStateChanged(user => {
       if (user) {
         console.log(user);
         let { dispatch } = this.props;
         dispatch(actions.login(user.uid));
         dispatch(actions.startAddProfile());
-        dispatch(actions.startAddUsers());
       }
     });
   }
@@ -32,4 +39,8 @@ class Home extends Component {
   }
 }
 
-export default connect()(Home);
+const mapStateToProps = state => {
+  users: state.users;
+};
+
+export default connect(mapStateToProps)(Home);
