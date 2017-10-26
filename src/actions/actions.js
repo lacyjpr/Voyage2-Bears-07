@@ -98,3 +98,12 @@ export const startAddUsers = () => {
     });
   };
 };
+
+export const addMessage = (postId, author, message) => {
+  return {
+    type: 'ADD_MESSAGE',
+    postId,
+    author,
+    message,
+  };
+};

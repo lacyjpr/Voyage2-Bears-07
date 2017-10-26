@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import { connect } from 'react-redux';
 
 class Messages extends Component {
   constructor(props, context) {
@@ -32,16 +33,17 @@ class Messages extends Component {
     console.log(`Update message: ${event.target.value}`);
     this.setState({
       message: event.target.value,
-      username: this.props.user.displayName,
+      username: this.props.profile.username,
     });
   }
 
   submitMessage(event) {
     console.log(`Submit message: ${this.state.message}`);
+
     const nextMessage = {
       id: this.state.messages.length,
       text: this.state.message,
-      username: this.props.user.displayName,
+      username: this.props.profile.username,
     };
 
     firebase
@@ -80,4 +82,10 @@ class Messages extends Component {
   }
 }
 
-export default Messages;
+const mapStateToProps = state => {
+  return {
+    profile: state.profile.profile,
+  };
+};
+
+export default connect(mapStateToProps)(Messages);
