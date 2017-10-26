@@ -8,7 +8,7 @@ class HorizontalSlider extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: 10,
+      value: 100,
     };
   }
 
@@ -41,7 +41,7 @@ class HorizontalSlider extends Component {
       <div className="slider">
         <Slider
           min={0}
-          max={100}
+          max={500}
           value={value}
           onChange={this.handleChange}
           onChangeComplete={this.handleChangeComplete}

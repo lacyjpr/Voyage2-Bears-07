@@ -134,3 +134,9 @@ export const filterUsers = (users, center, radius) => {
     dispatch(addFilteredUsers(filteredUsers));
   };
 };
+
+// export const addToCounter = () => {
+//   return {
+//     type: 'INCREMENT',
+//   };
+// };

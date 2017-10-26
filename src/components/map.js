@@ -1,11 +1,20 @@
 /* global google */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import * as actions from './../actions/actions';
 
-class Map extends React.Component {
+import * as actions from './../actions/actions';
+//import './map.css';
+
+class Map extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.renderMap = this.renderMap.bind(this);
+  // }
   componentDidMount() {
+    // let { dispatch } = this.props;
+    // dispatch(actions.addToCounter());
     let markers = [];
     if (this.props.filteredUsers.length > 0) {
       markers = this.props.filteredUsers;
@@ -93,12 +102,44 @@ class Map extends React.Component {
     }
   }
 
+  // renderMap = () => {
+  //   if (this.props.filteredUsers.length < 1 && this.props.count < 1) {
+  //     const mapStyle = {
+  //       width: 400,
+  //       height: 400,
+  //     };
+  //     return <div ref="map" style={mapStyle} />;
+  //   } else if (this.props.filteredUsers.length < 1 && this.props.count > 0) {
+  //     const mapStyle = {
+  //       width: 400,
+  //       height: 400,
+  //     };
+  //     return (
+  //       <div>
+  //         <div ref="map" style={mapStyle} />
+  //         <div>
+  //           <p className="noResults">
+  //             No results in the specified area, showing all users
+  //           </p>
+  //         </div>
+  //       </div>
+  //     );
+  //   } else {
+  //     const mapStyle = {
+  //       width: 400,
+  //       height: 400,
+  //     };
+  //     return <div ref="map" style={mapStyle} />;
+  //   }
+  // };
+
   render() {
     const mapStyle = {
       width: 400,
       height: 400,
     };
     return <div ref="map" style={mapStyle} />;
+    // return <div>{this.renderMap()}</div>;
   }
 }
 
@@ -107,6 +148,7 @@ const mapStateToProps = state => {
     center: state.search.center,
     filteredUsers: state.filteredUsers,
     users: state.users,
+    // count: state.count,
   };
 };
 
