@@ -10,7 +10,7 @@ import UsersList from './usersList';
 class Home extends Component {
   componentDidMount() {
     console.log(this.props.users);
-    if (typeof this.props.users !== 'undefined') {
+    if (this.props.users) {
       return;
     } else {
       let { dispatch } = this.props;
