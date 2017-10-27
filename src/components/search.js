@@ -9,7 +9,10 @@ import './search.css';
 class Search extends React.Component {
   constructor(props) {
     super(props);
+
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
+    this.renderSearch = this.renderSearch.bind(this);
+
     let { dispatch } = this.props;
     // Initialize the map with 'United States' as the center
     dispatch(actions.getCenter({ lat: 37.09024, lng: -95.71289100000001 }));
@@ -32,6 +35,7 @@ class Search extends React.Component {
           this.props.radius
         )
       );
+      dispatch(actions.addToCounter());
     } else {
       dispatch(actions.getCenter(latlng));
       console.log(this.props.users);
@@ -44,17 +48,49 @@ class Search extends React.Component {
           this.props.radius
         )
       );
+      // Increment search counter
+      dispatch(actions.addToCounter());
     }
   }
 
+  renderSearch = () => {
+    // First map load
+    if (this.props.filteredUsers.length < 1 && this.props.count < 1) {
+      console.log('count ', this.props.count);
+      return (
+        <div>
+          <Geosuggest onSuggestSelect={this.onSuggestSelect} />
+          <p className="tip">*Search "World" to see all users.</p>
+          <HorizontalSlider />
+        </div>
+      );
+    } else if (this.props.filteredUsers.length < 1 && this.props.count > 0) {
+      // More than one map load with zero results
+      console.log('count ', this.props.count);
+      return (
+        <div>
+          <Geosuggest onSuggestSelect={this.onSuggestSelect} />
+          <p className="tip">*Search "World" to see all users.</p>
+          <HorizontalSlider />
+          <p className="tip">
+            No results in the specified area, showing all users.
+          </p>
+        </div>
+      );
+    } else {
+      // Normal map load with results
+      return (
+        <div>
+          <Geosuggest onSuggestSelect={this.onSuggestSelect} />
+          <p className="tip">*Search "World" to see all users.</p>
+          <HorizontalSlider />
+        </div>
+      );
+    }
+  };
+
   render() {
-    return (
-      <div>
-        <Geosuggest onSuggestSelect={this.onSuggestSelect} />
-        <p className="tip">*Search "World" to see all users.</p>
-        <HorizontalSlider />
-      </div>
-    );
+    return <div>{this.renderSearch()}</div>;
   }
 }
 
@@ -63,6 +99,8 @@ const mapStateToProps = state => {
     users: state.users,
     center: state.search.center,
     radius: state.search.radius,
+    filteredUsers: state.filteredUsers,
+    count: state.count,
   };
 };
 

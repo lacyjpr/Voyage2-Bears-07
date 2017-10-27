@@ -2,19 +2,12 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+//import * as actions from './../actions/actions';
 
 import * as actions from './../actions/actions';
-//import './map.css';
 
 class Map extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.renderMap = this.renderMap.bind(this);
-  // }
   componentDidMount() {
-    // let { dispatch } = this.props;
-    // dispatch(actions.addToCounter());
     let markers = [];
     if (this.props.filteredUsers.length > 0) {
       markers = this.props.filteredUsers;
@@ -39,7 +32,6 @@ class Map extends Component {
         position: position,
         map: this.map,
       });
-
       // Don't zoom in too far on only one marker
       // Credit: https://stackoverflow.com/questions/3334729/google-maps-v3-fitbounds-zoom-too-close-for-single-marker
       if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
@@ -67,10 +59,6 @@ class Map extends Component {
     }
     console.log(this.props.filteredUsers);
     console.log(markers);
-    // this.map = new google.maps.Map(this.refs.map, {
-    //   center: this.props.center,
-    //   zoom: 2,
-    // });
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
     for (let i = 0; i < markers.length; i++) {
@@ -83,7 +71,6 @@ class Map extends Component {
         position: position,
         map: this.map,
       });
-
       // Don't zoom in too far on only one marker
       // Credit: https://stackoverflow.com/questions/3334729/google-maps-v3-fitbounds-zoom-too-close-for-single-marker
       if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
@@ -102,44 +89,12 @@ class Map extends Component {
     }
   }
 
-  // renderMap = () => {
-  //   if (this.props.filteredUsers.length < 1 && this.props.count < 1) {
-  //     const mapStyle = {
-  //       width: 400,
-  //       height: 400,
-  //     };
-  //     return <div ref="map" style={mapStyle} />;
-  //   } else if (this.props.filteredUsers.length < 1 && this.props.count > 0) {
-  //     const mapStyle = {
-  //       width: 400,
-  //       height: 400,
-  //     };
-  //     return (
-  //       <div>
-  //         <div ref="map" style={mapStyle} />
-  //         <div>
-  //           <p className="noResults">
-  //             No results in the specified area, showing all users
-  //           </p>
-  //         </div>
-  //       </div>
-  //     );
-  //   } else {
-  //     const mapStyle = {
-  //       width: 400,
-  //       height: 400,
-  //     };
-  //     return <div ref="map" style={mapStyle} />;
-  //   }
-  // };
-
   render() {
     const mapStyle = {
       width: 400,
       height: 400,
     };
     return <div ref="map" style={mapStyle} />;
-    // return <div>{this.renderMap()}</div>;
   }
 }
 
@@ -148,7 +103,6 @@ const mapStateToProps = state => {
     center: state.search.center,
     filteredUsers: state.filteredUsers,
     users: state.users,
-    // count: state.count,
   };
 };
 

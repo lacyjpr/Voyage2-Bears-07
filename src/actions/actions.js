@@ -135,8 +135,8 @@ export const filterUsers = (users, center, radius) => {
   };
 };
 
-// export const addToCounter = () => {
-//   return {
-//     type: 'INCREMENT',
-//   };
-// };
+export const addToCounter = () => {
+  return {
+    type: 'INCREMENT',
+  };
+};
