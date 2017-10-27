@@ -37,6 +37,11 @@ h1 {
   color: #267dc0;
 }
 
+.tip {
+  font-size: 0.75em;
+  text-align: center;
+}
+
 .subheader {
   font-weight: 300;
   margin-bottom: 1.5em;

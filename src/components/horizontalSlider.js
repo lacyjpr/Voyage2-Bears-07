@@ -8,7 +8,7 @@ class HorizontalSlider extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: 10,
+      value: 100,
     };
   }
 
@@ -26,6 +26,13 @@ class HorizontalSlider extends Component {
   handleChangeComplete = () => {
     const { dispatch } = this.props;
     dispatch(actions.getRadius(this.state.value));
+    dispatch(
+      actions.filterUsers(
+        this.props.users,
+        this.props.center,
+        this.props.radius
+      )
+    );
   };
 
   render() {
@@ -34,7 +41,7 @@ class HorizontalSlider extends Component {
       <div className="slider">
         <Slider
           min={0}
-          max={100}
+          max={500}
           value={value}
           onChange={this.handleChange}
           onChangeComplete={this.handleChangeComplete}
@@ -45,4 +52,12 @@ class HorizontalSlider extends Component {
   }
 }
 
-export default connect()(HorizontalSlider);
+const mapStateToProps = state => {
+  return {
+    users: state.users,
+    center: state.search.center,
+    radius: state.search.radius,
+  };
+};
+
+export default connect(mapStateToProps)(HorizontalSlider);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as actions from './../actions/actions';
 import { auth } from './../firebase.js';
 
@@ -91,6 +92,9 @@ class Profile extends Component {
           <button className="editTodoBtn" onClick={this.toggleEdit}>
             Edit
           </button>
+          <div>
+            <Link to="/">Go Back!</Link>
+          </div>
         </div>
       );
     }
