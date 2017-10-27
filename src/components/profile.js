@@ -78,6 +78,9 @@ class Profile extends Component {
               Submit Profile
             </button>
           </form>
+          <button className="cancelBtn" onClick={this.toggleEdit}>
+            Cancel
+          </button>
         </div>
       );
     } else if (this.state.editable === true) {
@@ -110,6 +113,9 @@ class Profile extends Component {
               Submit Profile
             </button>
           </form>
+          <button className="cancelBtn" onClick={this.toggleEdit}>
+            Cancel
+          </button>
         </div>
       );
     } else {
