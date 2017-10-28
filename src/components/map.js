@@ -2,8 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import * as actions from './../actions/actions';
-
+import './map.css';
 import * as actions from './../actions/actions';
 
 class Map extends Component {
@@ -16,10 +15,7 @@ class Map extends Component {
     }
     console.log(this.props.filteredUsers);
     console.log(markers);
-    this.map = new google.maps.Map(this.refs.map, {
-      center: this.props.center,
-      zoom: 2,
-    });
+    this.map = new google.maps.Map(this.refs.map, {});
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
     for (let i = 0; i < markers.length; i++) {
@@ -91,10 +87,10 @@ class Map extends Component {
 
   render() {
     const mapStyle = {
-      width: 400,
-      height: 400,
+      width: 300,
+      height: 300,
     };
-    return <div ref="map" style={mapStyle} />;
+    return <div ref="map" className="map" />;
   }
 }
 
