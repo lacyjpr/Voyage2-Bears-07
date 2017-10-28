@@ -15,10 +15,7 @@ class Map extends Component {
     }
     console.log(this.props.filteredUsers);
     console.log(markers);
-    this.map = new google.maps.Map(this.refs.map, {
-      center: this.props.center,
-      zoom: 2,
-    });
+    this.map = new google.maps.Map(this.refs.map, {});
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
     for (let i = 0; i < markers.length; i++) {
