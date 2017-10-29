@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.0",
+    "firebase": "^4.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-geosuggest": "^2.5.0",
@@ -14,7 +15,6 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "firebase": "^4.5.0",
     "prettier": "^1.7.2",
     "react-scripts": "1.0.14"
   },

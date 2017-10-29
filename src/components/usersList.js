@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 
 class UsersList extends Component {
   render() {
-    const { users } = this.props;
-    const currentUsers = users.map(user => {
+    let users = [];
+    if (this.props.filteredUsers.length > 0) {
+      users = this.props.filteredUsers;
+    } else {
+      users = this.props.users;
+    }
+    console.log(users);
+    let currentUsers = users.map(user => {
       return (
         <li key={user.id}>
           <div className="userlist-username">
@@ -22,6 +28,7 @@ class UsersList extends Component {
 const mapStateToProps = state => {
   return {
     users: state.users,
+    filteredUsers: state.filteredUsers,
   };
 };
 
