@@ -11,6 +11,7 @@ class Messages extends Component {
       message: '',
       messages: [],
       username: '',
+      // userId: '',
     };
   }
 
@@ -85,6 +86,7 @@ class Messages extends Component {
 const mapStateToProps = state => {
   return {
     profile: state.profile.profile,
+    users: state.users,
   };
 };
 
