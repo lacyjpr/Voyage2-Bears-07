@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './map.css';
-import * as actions from './../actions/actions';
 
 class Map extends Component {
   componentDidMount() {
@@ -86,10 +85,6 @@ class Map extends Component {
   }
 
   render() {
-    const mapStyle = {
-      width: 300,
-      height: 300,
-    };
     return <div ref="map" className="map" />;
   }
 }
