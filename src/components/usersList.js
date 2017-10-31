@@ -33,7 +33,14 @@ class UsersList extends Component {
           <div className="userlist-username">{user.username}</div>
           <div className="userlist-location">{user.location}</div>
           <button onClick={this.toggleShowSend}>Message</button>
-          {this.state.showSend && <Send onClose={this.toggleShowSend} />}
+          <Send
+            showSend={this.state.showSend}
+            onClose={this.toggleShowSend}
+            recipient={user.id}
+            recipientName={user.username}
+            sender={this.props.auth.uid}
+            senderName={this.props.profile.username}
+          />
         </li>
       );
     });
@@ -45,6 +52,7 @@ const mapStateToProps = state => {
   return {
     users: state.users,
     filteredUsers: state.filteredUsers,
+    profile: state.profile.profile,
     auth: state.auth,
   };
 };
