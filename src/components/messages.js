@@ -19,7 +19,7 @@ class Messages extends Component {
     console.log('componentDidMount');
     firebase
       .database()
-      .ref('messages/')
+      .ref(`messages/${this.props.auth.uid}`)
       .on('value', snapshot => {
         const currentMessages = snapshot.val();
         if (currentMessages != null) {
@@ -49,7 +49,7 @@ class Messages extends Component {
 
     firebase
       .database()
-      .ref(`messages/${nextMessage.id}`)
+      .ref(`messages/${this.props.auth.uid}/${nextMessage.id}`)
       .set(nextMessage);
   }
 
@@ -87,6 +87,7 @@ const mapStateToProps = state => {
   return {
     profile: state.profile.profile,
     users: state.users,
+    auth: state.auth,
   };
 };
 

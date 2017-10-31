@@ -14,10 +14,9 @@ class UsersList extends Component {
     let currentUsers = users.map(user => {
       return (
         <li key={user.id}>
-          <div className="userlist-username">
-            <Link to={`/messages/${user.id}`}>{user.username}</Link>
-          </div>
+          <div className="userlist-username">{user.username}</div>
           <div className="userlist-location">{user.location}</div>
+          <Link to={`/messages/${user.id}`}>{user.username}</Link>
         </li>
       );
     });
