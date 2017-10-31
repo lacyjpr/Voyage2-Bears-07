@@ -10,6 +10,7 @@ class UsersList extends Component {
       showSend: false,
     };
     this.toggleShowSend = this.toggleShowSend.bind(this);
+    console.log(this.props.user);
   }
 
   toggleShowSend(e) {
@@ -20,31 +21,35 @@ class UsersList extends Component {
   }
 
   render() {
-    let users = [];
-    if (this.props.filteredUsers.length > 0) {
-      users = this.props.filteredUsers;
+    if (this.props.auth.uid) {
+      let users = [];
+      if (this.props.filteredUsers.length > 0) {
+        users = this.props.filteredUsers;
+      } else {
+        users = this.props.users;
+      }
+      console.log(users);
+      let currentUsers = users.map(user => {
+        return (
+          <li key={user.id}>
+            <div className="userlist-username">{user.username}</div>
+            <div className="userlist-location">{user.location}</div>
+            <button onClick={this.toggleShowSend}>Message</button>
+            <Send
+              showSend={this.state.showSend}
+              onClose={this.toggleShowSend}
+              recipient={user.id}
+              recipientName={user.username}
+              sender={this.props.auth.uid}
+              senderName={this.props.profile.username}
+            />
+          </li>
+        );
+      });
+      return <ul>{currentUsers}</ul>;
     } else {
-      users = this.props.users;
+      return <div className="noUser">You must sign in to view users!</div>;
     }
-    console.log(users);
-    let currentUsers = users.map(user => {
-      return (
-        <li key={user.id}>
-          <div className="userlist-username">{user.username}</div>
-          <div className="userlist-location">{user.location}</div>
-          <button onClick={this.toggleShowSend}>Message</button>
-          <Send
-            showSend={this.state.showSend}
-            onClose={this.toggleShowSend}
-            recipient={user.id}
-            recipientName={user.username}
-            sender={this.props.auth.uid}
-            senderName={this.props.profile.username}
-          />
-        </li>
-      );
-    });
-    return <ul>{currentUsers}</ul>;
   }
 }
 
