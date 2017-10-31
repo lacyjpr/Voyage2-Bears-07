@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 class UsersList extends Component {
   render() {
@@ -16,7 +16,6 @@ class UsersList extends Component {
         <li key={user.id}>
           <div className="userlist-username">{user.username}</div>
           <div className="userlist-location">{user.location}</div>
-          <Link to={`/messages/${user.id}`}>{user.username}</Link>
         </li>
       );
     });
@@ -28,6 +27,7 @@ const mapStateToProps = state => {
   return {
     users: state.users,
     filteredUsers: state.filteredUsers,
+    auth: state.auth,
   };
 };
 
