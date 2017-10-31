@@ -5,3 +5,5 @@ class Send extends Component {
     return <div>Send Component</div>;
   }
 }
+
+export default Send;
