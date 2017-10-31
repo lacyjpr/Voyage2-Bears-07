@@ -33,7 +33,7 @@ class UsersList extends Component {
           <div className="userlist-username">{user.username}</div>
           <div className="userlist-location">{user.location}</div>
           <button onClick={this.toggleShowSend}>Message</button>
-          {this.state.showSend && <Send />}
+          {this.state.showSend && <Send onClose={this.toggleShowSend} />}
         </li>
       );
     });
