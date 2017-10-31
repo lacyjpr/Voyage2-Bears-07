@@ -10,8 +10,8 @@ class Send extends Component {
       <div className="backdrop">
         <div className="modal">
           <p>Send Component</p>
-          <p>{this.props.recipientName}</p>
-          <p>{this.props.senderName}</p>
+          <p>Recipient: {this.props.recipientName}</p>
+          <p>Sender: {this.props.senderName}</p>
           <button onClick={this.props.onClose}>Close</button>
         </div>
       </div>
