@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import firebase from 'firebase';
 
 import './send.css';
 
@@ -9,7 +10,14 @@ class Send extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
+    let recipient = this.refs.recipient.value;
+    let sender = this.refs.sender.value;
+    let recipientName = this.refs.recipientName.value;
+    let senderName = this.refs.senderName.value;
+    let subject = this.refs.subject.value;
+    let message = this.refs.message.value;
     console.log('sent');
     this.props.onClose();
   }
@@ -21,12 +29,30 @@ class Send extends Component {
     return (
       <div className="backdrop">
         <div className="modal">
-          <p>Send Message</p>
-          <p>Recipient: {this.props.recipientName}</p>
-          <p>Sender: {this.props.senderName}</p>
+          <h4 className="message-title">Message</h4>
           <form onSubmit={this.handleSubmit}>
             <input type="hidden" ref="sender" value={this.props.sender} />
             <input type="hidden" ref="recipient" value={this.props.recipient} />
+            <div>
+              <label htmlFor="recipient-name">Recipient</label>
+              <input
+                type="text"
+                id="recipient-name"
+                ref="recipientName"
+                value={this.props.recipientName}
+                readOnly
+              />
+            </div>
+            <div>
+              <label htmlFor="sender-name">Sender</label>
+              <input
+                type="text"
+                id="sender-name"
+                ref="senderName"
+                value={this.props.senderName}
+                readOnly
+              />
+            </div>
             <div>
               <input
                 type="text"
@@ -36,7 +62,7 @@ class Send extends Component {
                 required
               />
             </div>
-            <textarea className="message" />
+            <textarea className="message" ref="message" placeholder="message" />
             <div />
             <button>Send</button>
           </form>

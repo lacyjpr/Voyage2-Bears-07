@@ -30,3 +30,15 @@
 .message {
   width: 59vw;
 }
+
+.message-title {
+  margin: 0;
+}
+
+#recipient-name {
+  width: 59vw;
+}
+
+#sender-name {
+  width: 59vw;
+}
