@@ -66,7 +66,7 @@ export const startAddProfile = () => {
     let profileRef = firebaseRef.child(`users/${uid}/`);
 
     return profileRef.once('value').then(snapshot => {
-      let profile = snapshot.val() || {};
+      let profile = snapshot.val() || null;
 
       dispatch(addProfile(profile));
     });

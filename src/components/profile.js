@@ -47,10 +47,7 @@ class Profile extends Component {
   };
 
   renderProfile = () => {
-    if (
-      this.props.profile === undefined ||
-      Object.keys(this.props.profile).length === 0
-    ) {
+    if (!this.props.profile || Object.keys(this.props.profile).length === 0) {
       return (
         <div className="edit-profile">
           <form onSubmit={this.handleSubmit}>
