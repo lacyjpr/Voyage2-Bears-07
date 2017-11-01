@@ -46,6 +46,7 @@ class UsersList extends Component {
           </li>
         );
       });
+      console.log(currentUsers);
       return <ul>{currentUsers}</ul>;
     } else {
       return <div className="noUser">You must sign in to view users!</div>;
