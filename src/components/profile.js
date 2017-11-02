@@ -19,7 +19,6 @@ class Profile extends Component {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
-        console.log(user);
         let { dispatch } = this.props;
         dispatch(actions.login(user.uid));
         dispatch(actions.startAddProfile());
@@ -116,9 +115,6 @@ class Profile extends Component {
         </div>
       );
     } else {
-      console.log(this.props.profile.username);
-      console.log(this.props.profile.location);
-      console.log(this.props.profile.latLng);
       return (
         <div className="profile">
           <p>User Name: {this.props.profile.username}</p>

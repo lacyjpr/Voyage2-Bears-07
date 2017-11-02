@@ -12,7 +12,6 @@ class UsersList extends Component {
       } else {
         users = this.props.users;
       }
-      console.log(users);
       return users.map(user => {
         return <User key={user.id} user={user} />;
       });

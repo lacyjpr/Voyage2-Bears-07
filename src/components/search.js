@@ -56,7 +56,6 @@ class Search extends React.Component {
   renderSearch = () => {
     // First map load
     if (this.props.filteredUsers.length < 1 && this.props.count < 1) {
-      console.log('count ', this.props.count);
       return (
         <div>
           <Geosuggest onSuggestSelect={this.onSuggestSelect} />

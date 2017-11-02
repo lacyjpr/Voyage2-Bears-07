@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+import Message from './message';
 
 class Messages extends Component {
   constructor(props, context) {
@@ -11,13 +14,11 @@ class Messages extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
     firebase
       .database()
       .ref(`messages/${this.props.auth.uid}`)
       .on('value', snapshot => {
         const currentMessages = snapshot.val();
-        console.log(currentMessages);
         const parsedMessages = [];
         if (currentMessages != null) {
           Object.keys(currentMessages).forEach(messageId => {
@@ -29,30 +30,21 @@ class Messages extends Component {
           this.setState({
             messages: parsedMessages,
           });
-          console.log(this.state.messages);
         }
       });
   }
 
-  //id, recipient, sender, recipientName, senderName, subject, text
-  // return users.map(user => {
-  //   return <User key={user.id} user={user} />;
-  // });
-
   render() {
     const currentMessages = this.state.messages.map(message => {
-      return (
-        <li key={message.id}>
-          <div className="username">From: {message.senderName}</div>
-          <div className="subject">Subject: {message.subject}</div>
-          <div className="message">Message: {message.text}</div>
-        </li>
-      );
+      return <Message key={message.id} message={message} />;
     });
 
     return (
       <div>
-        <ul>{currentMessages}</ul>
+        {currentMessages}
+        <div>
+          <Link to="/">Go Back!</Link>
+        </div>
       </div>
     );
   }

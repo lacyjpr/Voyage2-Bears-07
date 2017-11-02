@@ -12,8 +12,6 @@ class Map extends Component {
     } else {
       markers = this.props.users;
     }
-    console.log(this.props.filteredUsers);
-    console.log(markers);
     this.map = new google.maps.Map(this.refs.map, {});
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
@@ -52,8 +50,6 @@ class Map extends Component {
     } else {
       markers = this.props.users;
     }
-    console.log(this.props.filteredUsers);
-    console.log(markers);
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
     for (let i = 0; i < markers.length; i++) {
