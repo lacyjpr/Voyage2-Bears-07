@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
+import uuidv1 from 'uuid/v1';
 
 import './send.css';
 
@@ -8,17 +9,52 @@ class Send extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.send = this.send.bind(this);
+  }
+
+  // submitMessage(event) {
+  //   console.log(`Submit message: ${this.state.message}`);
+
+  //   const nextMessage = {
+  //     id: this.state.messages.length,
+  //     text: this.state.message,
+  //     username: this.props.profile.username,
+  //   };
+
+  //   firebase
+  //     .database()
+  //     .ref(`messages/${this.props.auth.uid}/${nextMessage.id}`)
+  //     .set(nextMessage);
+  // }
+
+  send(id, recipient, sender, recipientName, senderName, subject, text) {
+    const message = {
+      id,
+      recipient,
+      sender,
+      recipientName,
+      senderName,
+      subject,
+      text,
+    };
+
+    firebase
+      .database()
+      .ref(`messages/${message.recipient}/${message.id}`)
+      .set(message);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    let id = uuidv1();
     let recipient = this.refs.recipient.value;
     let sender = this.refs.sender.value;
     let recipientName = this.refs.recipientName.value;
     let senderName = this.refs.senderName.value;
     let subject = this.refs.subject.value;
-    let message = this.refs.message.value;
+    let text = this.refs.message.value;
     console.log('sent');
+    this.send(id, recipient, sender, recipientName, senderName, subject, text);
     this.props.onClose();
   }
 

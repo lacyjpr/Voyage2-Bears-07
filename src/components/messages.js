@@ -5,13 +5,8 @@ import { connect } from 'react-redux';
 class Messages extends Component {
   constructor(props, context) {
     super(props, context);
-    this.updateMessage = this.updateMessage.bind(this);
-    this.submitMessage = this.submitMessage.bind(this);
     this.state = {
-      message: '',
       messages: [],
-      username: '',
-      // userId: '',
     };
   }
 
@@ -22,43 +17,32 @@ class Messages extends Component {
       .ref(`messages/${this.props.auth.uid}`)
       .on('value', snapshot => {
         const currentMessages = snapshot.val();
+        console.log(currentMessages);
+        const parsedMessages = [];
         if (currentMessages != null) {
-          this.setState({
-            messages: currentMessages,
+          Object.keys(currentMessages).forEach(messageId => {
+            parsedMessages.push({
+              id: messageId,
+              ...currentMessages[messageId],
+            });
           });
+          this.setState({
+            messages: parsedMessages,
+          });
+          console.log(this.state.messages);
         }
       });
   }
 
-  updateMessage(event) {
-    console.log(`Update message: ${event.target.value}`);
-    this.setState({
-      message: event.target.value,
-      username: this.props.profile.username,
-    });
-  }
-
-  submitMessage(event) {
-    console.log(`Submit message: ${this.state.message}`);
-
-    const nextMessage = {
-      id: this.state.messages.length,
-      text: this.state.message,
-      username: this.props.profile.username,
-    };
-
-    firebase
-      .database()
-      .ref(`messages/${this.props.auth.uid}/${nextMessage.id}`)
-      .set(nextMessage);
-  }
+  //id, recipient, sender, recipientName, senderName, subject, text
 
   render() {
-    const currentMessages = this.state.messages.map((message, i) => {
+    const currentMessages = this.state.messages.map(message => {
       return (
         <li key={message.id}>
+          <div className="username">From: {message.senderName}</div>
+          <div className="subject">Subject: {message.subject}</div>
           <div className="message">Message: {message.text}</div>
-          <div className="username">User: {message.username}</div>
         </li>
       );
     });
@@ -67,13 +51,7 @@ class Messages extends Component {
       <div>
         {this.props.user ? (
           <div>
-            <ol>{currentMessages}</ol>
-            <input
-              onChange={this.updateMessage}
-              type="text"
-              placeholder="message"
-            />
-            <button onClick={this.submitMessage}>Submit Message</button>
+            <ul>{currentMessages}</ul>
           </div>
         ) : (
           <div>You must sign in to view and submit messages!</div>
