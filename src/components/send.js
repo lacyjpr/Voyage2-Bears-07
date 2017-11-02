@@ -12,7 +12,7 @@ class Send extends Component {
     this.send = this.send.bind(this);
   }
 
-  send(id, recipient, sender, recipientName, senderName, subject, text) {
+  send(id, recipient, sender, recipientName, senderName, subject, text, date) {
     const message = {
       id,
       recipient,
@@ -21,6 +21,7 @@ class Send extends Component {
       senderName,
       subject,
       text,
+      date,
     };
 
     firebase
@@ -38,8 +39,17 @@ class Send extends Component {
     let senderName = this.refs.senderName.value;
     let subject = this.refs.subject.value;
     let text = this.refs.message.value;
-    console.log('sent');
-    this.send(id, recipient, sender, recipientName, senderName, subject, text);
+    let date = Date.now();
+    this.send(
+      id,
+      recipient,
+      sender,
+      recipientName,
+      senderName,
+      subject,
+      text,
+      date
+    );
     this.props.onClose();
   }
 

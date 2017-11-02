@@ -27,6 +27,12 @@ class Messages extends Component {
               ...currentMessages[messageId],
             });
           });
+          // Sort by date, newest to oldest. Credit: https://stackoverflow.com/questions/10123953/sort-javascript-object-array-by-date
+          parsedMessages.sort(function(a, b) {
+            a = new Date(a.date);
+            b = new Date(b.date);
+            return a > b ? -1 : a < b ? 1 : 0;
+          });
           this.setState({
             messages: parsedMessages,
           });

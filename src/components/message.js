@@ -26,8 +26,6 @@ class Message extends Component {
       .remove();
   }
 
-  //id, recipient, sender, recipientName, senderName, subject, text
-
   render() {
     return (
       <div className="message">
