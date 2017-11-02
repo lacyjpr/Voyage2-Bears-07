@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 
 import Send from './send';
+import './message.css';
 
 class Message extends Component {
   constructor(props) {
@@ -31,7 +32,10 @@ class Message extends Component {
       <div className="message">
         <div className="username">From: {this.props.message.senderName}</div>
         <div className="subject">Subject: {this.props.message.subject}</div>
-        <div className="message-text">Message: {this.props.message.text}</div>
+        <div className="message-text">
+          Message:<br />
+          {this.props.message.text}
+        </div>
         <button onClick={this.toggleShowSend}>Reply</button>
         <button onClick={this.deleteMessage}>Delete</button>
         <Send
