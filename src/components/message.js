@@ -10,12 +10,20 @@ class Message extends Component {
       showSend: false,
     };
     this.toggleShowSend = this.toggleShowSend.bind(this);
+    this.deleteMessage = this.deleteMessage.bind(this);
   }
 
   toggleShowSend() {
     this.setState({
       showSend: !this.state.showSend,
     });
+  }
+
+  deleteMessage() {
+    firebase
+      .database()
+      .ref(`messages/${this.props.message.recipient}/${this.props.message.id}`)
+      .remove();
   }
 
   //id, recipient, sender, recipientName, senderName, subject, text
@@ -27,6 +35,7 @@ class Message extends Component {
         <div className="subject">Subject: {this.props.message.subject}</div>
         <div className="message-text">Message: {this.props.message.text}</div>
         <button onClick={this.toggleShowSend}>Reply</button>
+        <button onClick={this.deleteMessage}>Delete</button>
         <Send
           showSend={this.state.showSend}
           onClose={this.toggleShowSend}

@@ -12,21 +12,6 @@ class Send extends Component {
     this.send = this.send.bind(this);
   }
 
-  // submitMessage(event) {
-  //   console.log(`Submit message: ${this.state.message}`);
-
-  //   const nextMessage = {
-  //     id: this.state.messages.length,
-  //     text: this.state.message,
-  //     username: this.props.profile.username,
-  //   };
-
-  //   firebase
-  //     .database()
-  //     .ref(`messages/${this.props.auth.uid}/${nextMessage.id}`)
-  //     .set(nextMessage);
-  // }
-
   send(id, recipient, sender, recipientName, senderName, subject, text) {
     const message = {
       id,
