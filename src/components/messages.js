@@ -35,6 +35,9 @@ class Messages extends Component {
   }
 
   //id, recipient, sender, recipientName, senderName, subject, text
+  // return users.map(user => {
+  //   return <User key={user.id} user={user} />;
+  // });
 
   render() {
     const currentMessages = this.state.messages.map(message => {
@@ -49,13 +52,7 @@ class Messages extends Component {
 
     return (
       <div>
-        {this.props.user ? (
-          <div>
-            <ul>{currentMessages}</ul>
-          </div>
-        ) : (
-          <div>You must sign in to view and submit messages!</div>
-        )}
+        <ul>{currentMessages}</ul>
       </div>
     );
   }
