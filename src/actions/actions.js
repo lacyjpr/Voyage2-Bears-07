@@ -99,15 +99,6 @@ export const startAddUsers = () => {
   };
 };
 
-export const addMessage = (postId, author, message) => {
-  return {
-    type: 'ADD_MESSAGE',
-    postId,
-    author,
-    message,
-  };
-};
-
 export const addFilteredUsers = filteredUsers => {
   return {
     type: 'ADD_FILTERED_USERS',
