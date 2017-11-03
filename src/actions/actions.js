@@ -62,11 +62,10 @@ export const startUpdateProfile = (userNameText, locationText) => {
 export const startAddProfile = () => {
   return (dispatch, getState) => {
     let uid = getState().auth.uid;
-    console.log('store ', uid);
     let profileRef = firebaseRef.child(`users/${uid}/`);
 
     return profileRef.once('value').then(snapshot => {
-      let profile = snapshot.val() || {};
+      let profile = snapshot.val() || null;
 
       dispatch(addProfile(profile));
     });
@@ -97,6 +96,15 @@ export const startAddUsers = () => {
       });
       dispatch(addUsers(parsedUsers));
     });
+  };
+};
+
+export const addMessage = (postId, author, message) => {
+  return {
+    type: 'ADD_MESSAGE',
+    postId,
+    author,
+    message,
   };
 };
 

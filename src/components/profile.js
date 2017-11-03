@@ -19,7 +19,6 @@ class Profile extends Component {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
-        console.log(user);
         let { dispatch } = this.props;
         dispatch(actions.login(user.uid));
         dispatch(actions.startAddProfile());
@@ -47,10 +46,7 @@ class Profile extends Component {
   };
 
   renderProfile = () => {
-    if (
-      this.props.profile === undefined ||
-      Object.keys(this.props.profile).length === 0
-    ) {
+    if (!this.props.profile || Object.keys(this.props.profile).length === 0) {
       return (
         <div className="edit-profile">
           <form onSubmit={this.handleSubmit}>
@@ -119,9 +115,6 @@ class Profile extends Component {
         </div>
       );
     } else {
-      console.log(this.props.profile.username);
-      console.log(this.props.profile.location);
-      console.log(this.props.profile.latLng);
       return (
         <div className="profile">
           <p>User Name: {this.props.profile.username}</p>
