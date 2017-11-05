@@ -13,7 +13,9 @@ class Map extends Component {
       markers = this.props.users;
     }
     console.log(markers);
-    let infowindow = new google.maps.InfoWindow({});
+    let infowindow = new google.maps.InfoWindow({
+      disableAutoPan: true,
+    });
     this.map = new google.maps.Map(this.refs.map, {});
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
@@ -63,7 +65,9 @@ class Map extends Component {
       markers = this.props.users;
     }
     console.log(markers);
-    let infowindow = new google.maps.InfoWindow({});
+    let infowindow = new google.maps.InfoWindow({
+      disableAutoPan: true,
+    });
     let bounds = new google.maps.LatLngBounds();
     // Loop through the array of markers & place each on the map
     for (let i = 0; i < markers.length; i++) {
