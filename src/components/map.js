@@ -36,8 +36,6 @@ class Map extends Component {
       marker.addListener('click', function() {
         infowindow.setContent(contentString);
         infowindow.open(this.map, this);
-        this.map.setCenter(this.getPosition());
-        this.map.setZoom(3);
       });
       // Don't zoom in too far on only one marker
       // Credit: https://stackoverflow.com/questions/3334729/google-maps-v3-fitbounds-zoom-too-close-for-single-marker
@@ -87,8 +85,6 @@ class Map extends Component {
       marker.addListener('click', function() {
         infowindow.setContent(contentString);
         infowindow.open(this.map, this);
-        this.map.setCenter(this.getPosition());
-        this.map.setZoom(3);
       });
       // Don't zoom in too far on only one marker
       // Credit: https://stackoverflow.com/questions/3334729/google-maps-v3-fitbounds-zoom-too-close-for-single-marker
