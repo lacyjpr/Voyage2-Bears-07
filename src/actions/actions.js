@@ -99,15 +99,6 @@ export const startAddUsers = () => {
   };
 };
 
-export const addMessage = (postId, author, message) => {
-  return {
-    type: 'ADD_MESSAGE',
-    postId,
-    author,
-    message,
-  };
-};
-
 export const addFilteredUsers = filteredUsers => {
   return {
     type: 'ADD_FILTERED_USERS',
@@ -138,7 +129,6 @@ export const filterUsers = (users, center, radius) => {
         }
       }
     }
-    console.log(filteredUsers);
     dispatch(addFilteredUsers(filteredUsers));
   };
 };

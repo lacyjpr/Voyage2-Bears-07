@@ -20,14 +20,9 @@ class Search extends React.Component {
 
   onSuggestSelect(suggest) {
     let { dispatch } = this.props;
-    console.log(suggest);
     let latlng = suggest.location;
-    console.log(latlng);
     if (latlng === undefined) {
       console.log('Place not found');
-      console.log(this.props.users);
-      console.log(this.props.center);
-      console.log(this.props.radius);
       dispatch(
         actions.filterUsers(
           this.props.users,
@@ -38,9 +33,6 @@ class Search extends React.Component {
       dispatch(actions.addToCounter());
     } else {
       dispatch(actions.getCenter(latlng));
-      console.log(this.props.users);
-      console.log(this.props.center);
-      console.log(this.props.radius);
       dispatch(
         actions.filterUsers(
           this.props.users,
@@ -65,7 +57,6 @@ class Search extends React.Component {
       );
     } else if (this.props.filteredUsers.length < 1 && this.props.count > 0) {
       // More than one map load with zero results
-      console.log('count ', this.props.count);
       return (
         <div>
           <Geosuggest onSuggestSelect={this.onSuggestSelect} />
