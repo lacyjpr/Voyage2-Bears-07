@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import firebase from 'firebase';
 import uuidv1 from 'uuid/v1';
 
-import './send.css';
-
 class Send extends Component {
   constructor(props) {
     super(props);

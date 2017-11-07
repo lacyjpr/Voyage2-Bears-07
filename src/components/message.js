@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 
 import Send from './send';
-import './message.css';
 
 class Message extends Component {
   constructor(props) {
