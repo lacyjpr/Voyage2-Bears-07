@@ -21,7 +21,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <p>Meet and Code</p>
         <Search />
         <Map />
         <UsersList />

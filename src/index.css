@@ -1,102 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-.google-btn {
-  margin: 25px;
-  width: 80%;
-  min-width: 184px;
-  max-width: 184px;
-  height: 42px;
-  background-color: #fcfcfc;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  cursor: hand;
-  align-self: center;
-  user-select: none;
-  transition: all 400ms ease 0s;
-  display: flex;
-}
-.google-btn .google-icon-wrapper {
-  position: absolute;
-  margin-top: 1px;
-  margin-left: 1px;
-  width: 40px;
-  height: 40px;
-  border-radius: 2px;
-  user-select: none;
-}
-.google-btn .google-icon-svg {
-  position: absolute;
-  margin-top: 11px;
-  margin-left: 11px;
-  width: 18px;
-  height: 18px;
-  user-select: none;
-}
-.google-btn .btn-text {
-  float: right;
-  margin: 11px 14px 40px 40px;
-  color: #757575;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  font-family: Roboto;
-  user-select: none;
-}
-.google-btn:hover {
-  box-shadow: 0 3px 8px rgba(117, 117, 117, 0.5);
-  user-select: none;
-}
-.google-btn:active {
-  box-shadow: 0 1px 1px #757575;
-  background: #f8f8f8;
-  color: #fff;
-  user-select: none;
-}
-
-.normal-btn {
-  margin: 25px;
-  width: auto;
-  display: inline-block;
-  min-width: auto;
-  max-width: 184px;
-  height: 42px;
-  background-color: #fcfcfc;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  cursor: hand;
-  align-self: center;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: all 400ms ease 0s;
-}
-.normal-btn .btn-text {
-  float: left;
-  margin: 11px 14px 11px 14px;
-  color: #757575;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  font-family: Roboto;
-  user-select: none;
-}
-.normal-btn:hover {
-  box-shadow: 0 3px 8px rgba(117, 117, 117, 0.5);
-  user-select: none;
-}
-.normal-btn:active {
-  box-shadow: 0 1px 1px #757575;
-  background: #f8f8f8;
-  color: #fff;
-  user-select: none;
-}
 /*
   ========================================
   Reset
@@ -229,39 +130,163 @@ table {
 
 /*
   ========================================
+  smartphones, iPhone, portrait 480x320 phones
+  ========================================
+*/
+@media (min-width: 300px) {
+  .map {
+    width: 80vw;
+    height: 70vh;
+    margin-left: 10vw;
+    margin-bottom: 5vw;
+  }
+
+  .userListing {
+    width: 20vw;
+    height: 20vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 2vw;
+    border: 2px solid blue;
+  }
+
+  .userListing .userList-userName,
+  .userList-location {
+    display: inline;
+    overflow: auto;
+  }
+}
+
+/*
+  ========================================
+  portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
+  ========================================
+*/
+@media (min-width: 700px) {
+  .map {
+    width: 50vw;
+    height: 50vh;
+    margin-left: 7.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .userListing {
+    width: 10vw;
+    height: 15vh;
+    vertical-align: top;
+    display: inline-block;
+    border: 2px solid red;
+  }
+
+  .userListing .userList-userName,
+  .userList-location {
+    display: inline;
+    overflow: auto;
+  }
+}
+
+/*
+  ========================================
+  tablet, landscape iPad, lo-res laptops ands desktops
+  ========================================
+*/
+/* @media (min-width: 1000px) {
+  .map {
+    width: 80vw;
+    height: 80vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    display: table-cell;
+    float: left;
+  }
+
+  .userListing {
+    width: 15%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: top;
+    display: inline-block;
+    border: 2px solid black;
+  }
+
+  .userListing .userList-userName,
+  .userList-location {
+    display: inline;
+  }
+} */
+
+/*
+  ========================================
+  hi-res laptops and desktops
+  ========================================
+*/
+@media (min-width: 1000px) {
+  .map {
+    width: 55vw;
+    height: 70vh;
+    display: table-cell;
+    float: left;
+  }
+
+  .userListing {
+    width: 7.5vw;
+    height: 100%;
+    display: table-cell;
+    vertical-align: top;
+    display: inline-block;
+    border: 2px solid green;
+  }
+
+  .userListing .userList-userName,
+  .userList-location {
+    display: inline;
+    overflow: auto;
+  }
+
+  .header {
+    margin-bottom: 5vh;
+  }
+}
+
+/*
+  ========================================
   Header
   ========================================
 */
 
 .header {
-  width: 100%;
-  height: 50px;
+  width: 100vw;
+  height: 5vh;
   border: 2px solid black;
   margin-bottom: 25px;
+}
+
+.btn {
+  height: 5vh;
+  text-align: center;
 }
 
 .btn-logo {
   position: absolute;
   left: 50px;
-  top: 15px;
+  border: 2px solid black;
 }
 
 .btn-profile {
   position: absolute;
   left: 1500px;
-  top: 15px;
 }
 
 .btn-messages {
   position: absolute;
   left: 1560px;
-  top: 15px;
 }
 
 .btn-login {
   position: absolute;
   left: 1650px;
-  top: 15px;
 }
 
 /*
@@ -300,39 +325,6 @@ body {
   height: 80%;
   margin: 0 auto;
   display: table;
-}
-
-/*
-  ========================================
-  Map
-  ========================================
-*/
-
-.map {
-  width: 800px;
-  height: 400px;
-  margin-right: 2%;
-  display: table-cell;
-  float: left;
-}
-
-/*
-  ========================================
-  User List
-  ========================================
-*/
-
-.userList {
-  width: 15%;
-  height: 100%;
-  display: table-cell;
-  vertical-align: top;
-  border: 2px solid black;
-}
-
-.userList .userList-userName,
-.userList-location {
-  display: inline;
 }
 
 /*
