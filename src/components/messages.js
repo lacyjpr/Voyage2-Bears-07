@@ -36,6 +36,10 @@ class Messages extends Component {
           this.setState({
             messages: parsedMessages,
           });
+        } else {
+          this.setState({
+            messages: [],
+          });
         }
       });
   }
