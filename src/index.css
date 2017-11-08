@@ -183,7 +183,7 @@ body {
 }
 
 .users-wrapper {
-  width: 30vw;
+  width: 33vw;
   height: 50vh;
   overflow: scroll;
   margin: 0 auto;
@@ -191,14 +191,14 @@ body {
 }
 
 .userListing {
-  width: 20vw;
+  width: 25vw;
   /* height: 20vh; */
   /* margin-left: 5vw;
   margin-right: 5vw; */
   /* display: inline-block; */
   margin: 0 auto;
   vertical-align: top;
-  margin-bottom: 2vw;
+  /* margin-bottom: 2vw; */
   border: 2px solid blue;
 }
 
@@ -898,6 +898,7 @@ h1 {
   .userListing {
     /* width: 7.5vw; */
     /* height: 100%; */
+    width: 20vw;
     display: table-cell;
     vertical-align: top;
     display: inline-block;
