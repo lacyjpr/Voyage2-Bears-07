@@ -56,7 +56,7 @@ class Send extends Component {
       return null;
     }
     return (
-      <div className="backdrop">
+      <section className="backdrop">
         <div className="modal">
           <h4 className="message-title">Message</h4>
           <form onSubmit={this.handleSubmit}>
@@ -98,7 +98,7 @@ class Send extends Component {
 
           <button onClick={this.props.onClose}>Close</button>
         </div>
-      </div>
+      </section>
     );
   }
 }

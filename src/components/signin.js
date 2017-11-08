@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class SignIn extends Component {
   render() {
     return (
-      <div>
+      <section>
         <div>
           <button className="normal-btn" onClick={this.props.loginFacebook}>
             Log in with Facebook!!
@@ -32,7 +32,7 @@ class SignIn extends Component {
         </div>
 
         <Link to="/">Go Back!</Link>
-      </div>
+      </section>
     );
   }
 }

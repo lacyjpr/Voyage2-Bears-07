@@ -102,7 +102,7 @@ class Map extends Component {
   }
 
   render() {
-    return <div ref="map" className="map" />;
+    return <section ref="map" className="map" />;
   }
 }
 

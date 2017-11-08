@@ -48,7 +48,7 @@ class Profile extends Component {
   renderProfile = () => {
     if (!this.props.profile || Object.keys(this.props.profile).length === 0) {
       return (
-        <div className="edit-profile">
+        <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="edit-user">User Name</label>
@@ -77,11 +77,11 @@ class Profile extends Component {
           <button className="cancelBtn" onClick={this.toggleEdit}>
             Cancel
           </button>
-        </div>
+        </section>
       );
     } else if (this.state.editable === true) {
       return (
-        <div className="edit-profile">
+        <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="edit-user">User Name</label>
@@ -112,11 +112,11 @@ class Profile extends Component {
           <button className="cancelBtn" onClick={this.toggleEdit}>
             Cancel
           </button>
-        </div>
+        </section>
       );
     } else {
       return (
-        <div className="profile">
+        <section className="profile">
           <p>User Name: {this.props.profile.username}</p>
           <p>Location: {this.props.profile.location}</p>
           <button className="editTodoBtn" onClick={this.toggleEdit}>
@@ -125,7 +125,7 @@ class Profile extends Component {
           <div>
             <Link to="/">Go Back!</Link>
           </div>
-        </div>
+        </section>
       );
     }
   };

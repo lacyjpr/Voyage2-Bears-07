@@ -20,7 +20,7 @@ class User extends Component {
 
   render() {
     return (
-      <div className="userListing">
+      <aside className="userListing">
         <div className="userlist-username">{this.props.user.username}</div>
         <div className="userlist-location">{this.props.user.location}</div>
         <button onClick={this.toggleShowSend}>Message</button>
@@ -32,7 +32,7 @@ class User extends Component {
           sender={this.props.auth.uid}
           senderName={this.props.profile.username}
         />
-      </div>
+      </aside>
     );
   }
 }
