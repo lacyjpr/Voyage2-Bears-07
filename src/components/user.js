@@ -20,7 +20,7 @@ class User extends Component {
 
   render() {
     return (
-      <aside className="userListing">
+      <aside className="userListing section">
         <div className="userlist-username">{this.props.user.username}</div>
         <div className="userlist-location">{this.props.user.location}</div>
         <button onClick={this.toggleShowSend}>Message</button>

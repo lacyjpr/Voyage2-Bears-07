@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
-      <header className="header group">
+      <header className="header group section">
         <Link to="/" className="btn-logo btn styleLink">
           Meet and Code
         </Link>

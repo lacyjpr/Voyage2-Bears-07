@@ -21,9 +21,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Search />
-        <Map />
-        <UsersList />
+        <Search className="section" />
+        <Map className="section" />
+        <UsersList className="section" />
       </div>
     );
   }
