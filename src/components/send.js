@@ -63,7 +63,9 @@ class Send extends Component {
             <input type="hidden" ref="sender" value={this.props.sender} />
             <input type="hidden" ref="recipient" value={this.props.recipient} />
             <div>
-              <label htmlFor="recipient-name">Recipient</label>
+              <label className="recipient-Name" htmlFor="recipient-name">
+                Recipient
+              </label>
               <input
                 type="text"
                 id="recipient-name"
@@ -73,7 +75,9 @@ class Send extends Component {
               />
             </div>
             <div>
-              <label htmlFor="sender-name">Sender</label>
+              <label className="sender-Name" htmlFor="sender-name">
+                Sender
+              </label>
               <input
                 type="text"
                 id="sender-name"
@@ -93,10 +97,12 @@ class Send extends Component {
             </div>
             <textarea className="message" ref="message" placeholder="message" />
             <div />
-            <button>Send</button>
+            <button className="send-btn">Send</button>
           </form>
 
-          <button onClick={this.props.onClose}>Close</button>
+          <button className="close-btn" onClick={this.props.onClose}>
+            Close
+          </button>
         </div>
       </section>
     );
