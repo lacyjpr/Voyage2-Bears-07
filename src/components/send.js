@@ -58,13 +58,12 @@ class Send extends Component {
     return (
       <section className="backdrop">
         <div className="modal">
-          <h4 className="message-title">Message</h4>
           <form onSubmit={this.handleSubmit}>
             <input type="hidden" ref="sender" value={this.props.sender} />
             <input type="hidden" ref="recipient" value={this.props.recipient} />
             <div>
               <label className="recipient-Name" htmlFor="recipient-name">
-                Recipient
+                RECIPIENT
               </label>
               <input
                 type="text"
@@ -76,7 +75,7 @@ class Send extends Component {
             </div>
             <div>
               <label className="sender-Name" htmlFor="sender-name">
-                Sender
+                SENDER
               </label>
               <input
                 type="text"
@@ -95,7 +94,7 @@ class Send extends Component {
                 required
               />
             </div>
-            <textarea className="message" ref="message" placeholder="message" />
+            <textarea className="message" ref="message" placeholder="Message" />
             <div />
             <button className="send-btn">Send</button>
           </form>

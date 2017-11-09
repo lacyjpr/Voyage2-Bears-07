@@ -815,43 +815,43 @@ h1 {
 
 .edit-subject {
   width: 57vw;
-  color: #000;
+  color: #888;
 }
 
 .message {
   width: 57vw;
-  color: #000;
+  color: #888;
 }
 
 .message-title {
   margin: 0;
-  color: #000;
+  color: #888;
 }
 
 .recipient-Name {
-  color: #000;
+  color: #888;
 }
 
 .sender-Name {
-  color: #000;
+  color: #888;
 }
 
 #recipient-name {
   width: 57vw;
-  color: #000;
+  color: #888;
 }
 
 #sender-name {
   width: 57vw;
-  color: #000;
+  color: #888;
 }
 
 .send-btn {
-  color: #000;
+  color: #888;
 }
 
 .close-btn {
-  color: #000;
+  color: #888;
 }
 
 /*
