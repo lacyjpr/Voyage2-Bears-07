@@ -760,9 +760,26 @@ h1 {
   ========================================
 */
 
+.message-container {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
 .message-text {
   /*preserve original formatting*/
   white-space: pre-wrap;
+  margin-bottom: 10px;
+}
+
+.return {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
 }
 
 /*
