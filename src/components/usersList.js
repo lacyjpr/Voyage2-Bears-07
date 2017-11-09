@@ -6,15 +6,18 @@ import User from './user';
 class UsersList extends Component {
   render() {
     if (this.props.auth.uid && this.props.profile) {
-      let users = [];
-      if (this.props.filteredUsers.length > 0) {
-        users = this.props.filteredUsers;
-      } else {
-        users = this.props.users;
-      }
-      return users.map(user => {
-        return <User key={user.id} user={user} />;
-      });
+      let renderUsers = () => {
+        let users = [];
+        if (this.props.filteredUsers.length > 0) {
+          users = this.props.filteredUsers;
+        } else {
+          users = this.props.users;
+        }
+        return users.map(user => {
+          return <User key={user.id} user={user} />;
+        });
+      };
+      return <div className="users-wrapper">{renderUsers()}</div>;
     } else {
       return (
         <div className="noUser">
