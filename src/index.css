@@ -183,13 +183,17 @@ body {
   align-items: center;
 }
 
+.userlist-message:hover {
+  color: #648880;
+}
+
 /*
   ========================================
   smartphones, iPhone, portrait 480x320 phones
   ========================================
 */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
   .header {
     height: 25%;
   }
@@ -216,8 +220,12 @@ body {
     word-spacing: 2px;
   }
 
-  .userList-userName {
-    margin-right: 2px;
+  .userlist-username {
+    margin-right: 2vw;
+  }
+
+  .userlist-location {
+    margin-right: 2vw;
   }
 }
 /*
@@ -279,6 +287,31 @@ body {
 .group {
   clear: both;
   *zoom: 1;
+}
+
+/*
+  ========================================
+  Footer
+  ========================================
+*/
+
+.primary-footer {
+  margin-top: 5vh;
+  color: #fff;
+  font-size: 14px;
+  padding-bottom: 44px;
+  padding-top: 44px;
+  background: #293f50;
+  width: 100vw !important;
+}
+.primary-footer small {
+  float: left;
+  font-weight: 400;
+  margin-left: 5vw;
+}
+
+footer nav {
+  margin-right: 5vw;
 }
 
 /*
@@ -346,8 +379,6 @@ textarea {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  max-width: 612px;
-  max-width: 34rem;
 }
 
 a {
@@ -809,6 +840,10 @@ h1 {
   user-select: none;
 }
 
+.btn-login {
+  text-transform: uppercase;
+}
+
 /*
   ========================================
   Messages
@@ -915,43 +950,16 @@ h1 {
 
 /*
   ========================================
-  portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
-  ========================================
-*/
-/* @media only screen and (min-width: 481px) and (max-width: 960px) {
-  .map {
-    width: 50vw;
-    height: 50vh;
-    margin-left: 7.5vw;
-    margin-bottom: 5vw;
-  }
-
-  .userListing { */
-/* width: 10vw; */
-/* height: 15vh; */
-/* vertical-align: top;
-    /* display: inline-block; */
-/* border: 2px solid red; */
-/* }
-
-  .userListing .userList-userName,
-  .userList-location {
-    display: inline;
-    overflow: auto;
-  }
-} */
-
-/*
-  ========================================
   hi-res laptops and desktops
   ========================================
 */
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 800px) {
   .map {
     width: 55vw;
     height: 70vh;
     display: table-cell;
     float: left;
+    margin-right: 5vw;
   }
 
   .users-wrapper {
@@ -963,13 +971,12 @@ h1 {
   }
 
   .userListing {
-    /* width: 7.5vw; */
-    /* height: 100%; */
     width: 20vw;
+    height: 15vh;
+    margin-bottom: 2vh;
     display: table-cell;
     vertical-align: top;
     display: inline-block;
-    border: 2px solid green;
   }
 
   .userListing .userList-userName,

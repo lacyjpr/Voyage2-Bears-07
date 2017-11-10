@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './components/header';
 import Main from './components/main';
+import Footer from './components/footer';
 import { auth } from './firebase.js';
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
       <div className="main-container">
         <Header logout={this.logout} user={this.state.user} />
         <Main user={this.state.user} />
+        <Footer />
       </div>
     );
   }
