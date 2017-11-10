@@ -172,6 +172,7 @@ body {
 .main-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .section {
@@ -665,7 +666,6 @@ h1 {
   ========================================
 */
 .profile {
-  display: block;
   border: 2px solid #000;
   margin: 0 auto;
   margin-bottom: 5vh;
@@ -673,6 +673,32 @@ h1 {
   background-color: #a9b2b9;
   color: #fff;
   width: 60vw;
+}
+
+.profile p {
+  padding: 10px 0 10px 0;
+}
+
+.edit-profile-btn {
+  padding: 10px;
+}
+
+.edit-profile {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
+.edit-user {
+  background-color: #a9b2b9;
+}
+
+.edit-location {
+  background-color: #a9b2b9;
 }
 
 /*
