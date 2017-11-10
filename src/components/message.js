@@ -28,15 +28,18 @@ class Message extends Component {
 
   render() {
     return (
-      <div className="message">
-        <div className="username">From: {this.props.message.senderName}</div>
-        <div className="subject">Subject: {this.props.message.subject}</div>
+      <div className="message-container">
+        <div className="username">FROM: {this.props.message.senderName}</div>
+        <div className="subject">SUBJECT: {this.props.message.subject}</div>
         <div className="message-text">
-          Message:<br />
+          MESSAGE:<br />
           {this.props.message.text}
         </div>
         <button onClick={this.toggleShowSend}>Reply</button>
-        <button onClick={this.deleteMessage}>Delete</button>
+        <div>
+          <button onClick={this.deleteMessage}>Delete</button>
+        </div>
+
         <Send
           showSend={this.state.showSend}
           onClose={this.toggleShowSend}

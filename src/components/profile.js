@@ -51,7 +51,7 @@ class Profile extends Component {
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
             <div>
-              <label htmlFor="edit-user">User Name</label>
+              <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
                 className="edit-user"
@@ -61,7 +61,7 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label htmlFor="edit-location">Location</label>
+              <label htmlFor="edit-location">LOCATION</label>
               <input
                 id="edit-location"
                 className="edit-location"
@@ -84,7 +84,7 @@ class Profile extends Component {
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
             <div>
-              <label htmlFor="edit-user">User Name</label>
+              <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
                 className="edit-user"
@@ -95,7 +95,7 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label htmlFor="edit-location">Location</label>
+              <label htmlFor="edit-location">LOCATION</label>
               <input
                 id="edit-location"
                 className="edit-location"
@@ -116,27 +116,24 @@ class Profile extends Component {
       );
     } else {
       return (
-        <section className="profile">
-          <p>User Name: {this.props.profile.username}</p>
-          <p>Location: {this.props.profile.location}</p>
-          <button className="editTodoBtn" onClick={this.toggleEdit}>
-            Edit
-          </button>
+        <div>
+          <section className="profile">
+            <p>USER NAME: {this.props.profile.username}</p>
+            <p>LOCATION: {this.props.profile.location}</p>
+            <button className="edit-profile-btn" onClick={this.toggleEdit}>
+              Edit
+            </button>
+          </section>
           <div>
             <Link to="/">Go Back!</Link>
           </div>
-        </section>
+        </div>
       );
     }
   };
 
   render() {
-    return (
-      <div>
-        <h3>Profile</h3>
-        {this.renderProfile()}
-      </div>
-    );
+    return <div>{this.renderProfile()}</div>;
   }
 }
 

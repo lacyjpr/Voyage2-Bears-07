@@ -169,9 +169,10 @@ body {
   color: #fff;
 }
 
-.container {
+.main-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .section {
@@ -664,6 +665,49 @@ h1 {
   Profile Page
   ========================================
 */
+.profile {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
+.profile:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile p {
+  padding: 10px 0 10px 0;
+}
+
+.edit-profile-btn {
+  padding: 10px;
+}
+
+.edit-profile {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
+.edit-profile:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.edit-user {
+  background-color: #a9b2b9;
+}
+
+.edit-location {
+  background-color: #a9b2b9;
+}
 
 /*
   ========================================
@@ -771,9 +815,30 @@ h1 {
   ========================================
 */
 
+.message-container {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
+.message-container:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .message-text {
   /*preserve original formatting*/
   white-space: pre-wrap;
+  margin-bottom: 10px;
+}
+
+.return {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
 }
 
 /*
@@ -809,22 +874,43 @@ h1 {
 
 .edit-subject {
   width: 57vw;
+  color: #888;
 }
 
 .message {
   width: 57vw;
+  color: #888;
 }
 
 .message-title {
   margin: 0;
+  color: #888;
+}
+
+.recipient-Name {
+  color: #888;
+}
+
+.sender-Name {
+  color: #888;
 }
 
 #recipient-name {
   width: 57vw;
+  color: #888;
 }
 
 #sender-name {
   width: 57vw;
+  color: #888;
+}
+
+.send-btn {
+  color: #888;
+}
+
+.close-btn {
+  color: #888;
 }
 
 /*

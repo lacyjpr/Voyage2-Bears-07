@@ -52,7 +52,7 @@ class Messages extends Component {
     return (
       <div>
         {currentMessages}
-        <div>
+        <div className="return">
           <Link to="/">Go Back!</Link>
         </div>
       </div>
