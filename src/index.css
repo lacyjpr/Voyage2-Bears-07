@@ -172,6 +172,7 @@ body {
 .main-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .section {
@@ -664,6 +665,49 @@ h1 {
   Profile Page
   ========================================
 */
+.profile {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
+.profile:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile p {
+  padding: 10px 0 10px 0;
+}
+
+.edit-profile-btn {
+  padding: 10px;
+}
+
+.edit-profile {
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
+
+.edit-profile:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.edit-user {
+  background-color: #a9b2b9;
+}
+
+.edit-location {
+  background-color: #a9b2b9;
+}
 
 /*
   ========================================
