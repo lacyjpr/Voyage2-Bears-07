@@ -177,7 +177,7 @@ body {
 
 .section {
   width: 100%;
-  height: 300px;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -243,7 +243,7 @@ body {
 }
 
 .tagline {
-  margin: 66px 0 22px 0;
+  margin: 0px 0 22px 0;
   text-align: right;
 }
 
@@ -268,11 +268,11 @@ body {
 .btn-logo {
   border-top: 4px solid #648880;
   float: left;
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 100;
   letter-spacing: 0.5px;
   line-height: 44px;
-  padding: 40px 0 22px 0;
+  padding: 20px 0 22px 0;
   text-transform: uppercase;
 }
 
@@ -687,12 +687,6 @@ h1 {
 
 /*
   ========================================
-  Sign In Page
-  ========================================
-*/
-
-/*
-  ========================================
   Profile Page
   ========================================
 */
@@ -755,13 +749,17 @@ h1 {
   cursor: pointer;
   font-size: 1em;
   height: 4em;
+  width: 12em;
   line-height: 1em;
   padding: 0 2em 0 4em;
   text-decoration: none;
   transition: all 0.5s;
+  display: block;
+  margin-bottom: 5vh;
 }
 
 .btn-facebook {
+  margin-top: 1em;
   background-color: #3b5998 !important;
 }
 
