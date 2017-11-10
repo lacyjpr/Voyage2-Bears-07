@@ -664,6 +664,16 @@ h1 {
   Profile Page
   ========================================
 */
+.profile {
+  display: block;
+  border: 2px solid #000;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 10px;
+  background-color: #a9b2b9;
+  color: #fff;
+  width: 60vw;
+}
 
 /*
   ========================================
