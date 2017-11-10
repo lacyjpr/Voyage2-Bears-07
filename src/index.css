@@ -745,58 +745,32 @@ h1 {
   Buttons
   ========================================
 */
-
-.google-btn {
-  margin: 25px;
-  width: 80%;
-  min-width: 184px;
-  max-width: 184px;
-  height: 42px;
-  background-color: #fcfcfc;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+.btn-si {
+  background-position: 1em;
+  background-repeat: no-repeat;
+  background-size: 2em;
+  border-radius: 0.5em;
+  border: none;
+  color: white;
   cursor: pointer;
-  cursor: hand;
-  align-self: center;
-  user-select: none;
-  transition: all 400ms ease 0s;
-  display: flex;
+  font-size: 1em;
+  height: 4em;
+  line-height: 1em;
+  padding: 0 2em 0 4em;
+  text-decoration: none;
+  transition: all 0.5s;
 }
-.google-btn .google-icon-wrapper {
-  position: absolute;
-  margin-top: 1px;
-  margin-left: 1px;
-  width: 40px;
-  height: 40px;
-  border-radius: 2px;
-  user-select: none;
+
+.btn-facebook {
+  background-color: #3b5998 !important;
 }
-.google-btn .google-icon-svg {
-  position: absolute;
-  margin-top: 11px;
-  margin-left: 11px;
-  width: 18px;
-  height: 18px;
-  user-select: none;
+
+.btn-github {
+  background-color: #2a2a2a !important;
 }
-.google-btn .btn-text {
-  float: right;
-  margin: 11px 14px 40px 40px;
-  color: #757575;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  font-family: Roboto;
-  user-select: none;
-}
-.google-btn:hover {
-  box-shadow: 0 3px 8px rgba(117, 117, 117, 0.5);
-  user-select: none;
-}
-.google-btn:active {
-  box-shadow: 0 1px 1px #757575;
-  background: #f8f8f8;
-  color: #fff;
-  user-select: none;
+
+.btn-google {
+  background-color: #dd4b39 !important;
 }
 
 .normal-btn {

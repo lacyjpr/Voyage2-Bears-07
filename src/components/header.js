@@ -25,12 +25,13 @@ class Header extends Component {
                     </Link>
                   </li>
                   <li>
-                    <button
+                    <Link
+                      to="/"
                       onClick={this.props.logout}
                       className="btn-login btn styleLink"
                     >
                       Logout
-                    </button>
+                    </Link>
                   </li>
                 </ul>
               </div>
