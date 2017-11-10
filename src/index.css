@@ -675,6 +675,10 @@ h1 {
   width: 60vw;
 }
 
+.profile:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .profile p {
   padding: 10px 0 10px 0;
 }
@@ -691,6 +695,10 @@ h1 {
   background-color: #a9b2b9;
   color: #fff;
   width: 60vw;
+}
+
+.edit-profile:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .edit-user {
