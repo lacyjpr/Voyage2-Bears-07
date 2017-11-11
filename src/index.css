@@ -214,6 +214,14 @@ body {
     width: 100vw;
   }
 
+  .users-wrapper {
+    width: 100vw;
+    height: 70vh;
+    overflow: scroll;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+
   .userListing {
     height: 10vh;
     margin-bottom: 2vh;
