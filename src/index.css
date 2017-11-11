@@ -601,60 +601,6 @@ h1 {
 
 /*
   ========================================
-  Range Slider Vertical Slider
-  ========================================
-*/
-
-.rangeslider-vertical {
-  margin: 20px auto;
-  height: 150px;
-  max-width: 10px;
-  background-color: transparent;
-}
-.rangeslider-vertical .rangeslider__fill,
-.rangeslider-vertical .rangeslider__handle {
-  position: absolute;
-}
-.rangeslider-vertical .rangeslider__fill {
-  width: 100%;
-  background-color: #7cb342;
-  box-shadow: none;
-  bottom: 0;
-}
-.rangeslider-vertical .rangeslider__handle {
-  width: 30px;
-  height: 10px;
-  left: -10px;
-  box-shadow: none;
-}
-.rangeslider-vertical .rangeslider__handle-tooltip {
-  left: -100%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-}
-.rangeslider-vertical .rangeslider__handle-tooltip:after {
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid rgba(0, 0, 0, 0.8);
-  left: 100%;
-  top: 12px;
-}
-
-/*
-  ========================================
-  Range Slider Reverse
-  ========================================
-*/
-.rangeslider-reverse.rangeslider-horizontal .rangeslider__fill {
-  right: 0;
-}
-.rangeslider-reverse.rangeslider-vertical .rangeslider__fill {
-  top: 0;
-  bottom: inherit;
-}
-
-/*
-  ========================================
   Range Slider Labels
   ========================================
 */
