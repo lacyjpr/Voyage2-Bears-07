@@ -226,7 +226,7 @@ body {
 
   .userListing {
     height: 10vh;
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
     word-spacing: 2px;
   }
 
