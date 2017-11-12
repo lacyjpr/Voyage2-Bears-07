@@ -734,6 +734,10 @@ textarea {
   display: block;
 }
 
+.profile-group h2 {
+  color: #648880;
+}
+
 .profile-group input,
 .profile-group select,
 .profile-group textarea,
