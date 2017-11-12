@@ -209,7 +209,6 @@ body {
   .map {
     margin-bottom: 15px;
     width: 100vw;
-<<<<<<< HEAD
     height: 65vw;
     margin: 0 auto;
   }
@@ -220,10 +219,7 @@ body {
     overflow: scroll;
     margin: 0 auto;
     border: 2px solid black;
-||||||| merged common ancestors
-=======
     height: 50vh;
->>>>>>> styling
   }
 
   .userListing {
@@ -975,16 +971,8 @@ textarea {
 
   .userListing {
     width: 20vw;
-<<<<<<< HEAD
     height: 10vh;
     /* margin-bottom: 2vh; */
-||||||| merged common ancestors
-    height: 15vh;
-    margin-bottom: 2vh;
-=======
-    height: 12vh;
-    margin-bottom: 2vh;
->>>>>>> styling
     display: table-cell;
     vertical-align: top;
     display: inline-block;
