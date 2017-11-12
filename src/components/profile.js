@@ -50,7 +50,7 @@ class Profile extends Component {
       return (
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <div>
+            <fieldset class="profile-group">
               <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
@@ -58,9 +58,7 @@ class Profile extends Component {
                 type="text"
                 ref="editUserName"
               />
-            </div>
 
-            <div>
               <label htmlFor="edit-location">LOCATION</label>
               <input
                 id="edit-location"
@@ -68,11 +66,11 @@ class Profile extends Component {
                 type="Text"
                 ref="editLocation"
               />
-            </div>
 
-            <button type="submit" className="submit-profile">
-              Submit Profile
-            </button>
+              <button type="submit" className="submit-profile">
+                Submit Profile
+              </button>
+            </fieldset>
           </form>
           <button className="cancelBtn" onClick={this.toggleEdit}>
             Cancel
@@ -83,7 +81,7 @@ class Profile extends Component {
       return (
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <div>
+            <fieldset class="profile-group">
               <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
@@ -92,9 +90,7 @@ class Profile extends Component {
                 ref="editUserName"
                 defaultValue={this.props.profile.username}
               />
-            </div>
 
-            <div>
               <label htmlFor="edit-location">LOCATION</label>
               <input
                 id="edit-location"
@@ -103,11 +99,11 @@ class Profile extends Component {
                 ref="editLocation"
                 defaultValue={this.props.profile.location}
               />
-            </div>
 
-            <button type="submit" className="submit-profile">
-              Submit Profile
-            </button>
+              <button type="submit" className="submit-profile">
+                Submit Profile
+              </button>
+            </fieldset>
           </form>
           <button className="cancelBtn" onClick={this.toggleEdit}>
             Cancel
@@ -117,9 +113,11 @@ class Profile extends Component {
     } else {
       return (
         <div>
-          <section className="profile">
-            <p>USER NAME: {this.props.profile.username}</p>
-            <p>LOCATION: {this.props.profile.location}</p>
+          <section className="profile-group">
+            <h2>USER NAME: </h2>
+            <p>{this.props.profile.username}</p>
+            <h2>LOCATION: </h2>
+            <p>{this.props.profile.location}</p>
             <button className="edit-profile-btn" onClick={this.toggleEdit}>
               Edit
             </button>

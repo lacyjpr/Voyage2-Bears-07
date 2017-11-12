@@ -61,7 +61,8 @@ class Send extends Component {
           <form onSubmit={this.handleSubmit}>
             <input type="hidden" ref="sender" value={this.props.sender} />
             <input type="hidden" ref="recipient" value={this.props.recipient} />
-            <div>
+
+            <fieldset class="messages-form">
               <label className="recipient-Name" htmlFor="recipient-name">
                 RECIPIENT
               </label>
@@ -72,8 +73,7 @@ class Send extends Component {
                 value={this.props.recipientName}
                 readOnly
               />
-            </div>
-            <div>
+
               <label className="sender-Name" htmlFor="sender-name">
                 SENDER
               </label>
@@ -84,8 +84,7 @@ class Send extends Component {
                 value={this.props.senderName}
                 readOnly
               />
-            </div>
-            <div>
+
               <input
                 type="text"
                 className="edit-subject"
@@ -93,10 +92,15 @@ class Send extends Component {
                 placeholder="Subject"
                 required
               />
-            </div>
-            <textarea className="message" ref="message" placeholder="Message" />
-            <div />
-            <button className="send-btn">Send</button>
+
+              <textarea
+                className="message"
+                ref="message"
+                placeholder="Message"
+              />
+
+              <button className="send-btn">Send</button>
+            </fieldset>
           </form>
 
           <button className="close-btn" onClick={this.props.onClose}>
