@@ -170,6 +170,7 @@ body {
   justify-content: center;
   position: relative;
   min-height: 100%;
+  flex: 1 0 auto;
 }
 
 @media only screen and (min-width: 799) and (max-width: 1476) {
@@ -367,6 +368,7 @@ footer {
   padding-top: 44px;
   background: #293f50;
   width: 100vw !important;
+  margin-bottom: -50px;
 }
 .primary-footer small {
   float: left;
