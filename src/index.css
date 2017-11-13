@@ -203,6 +203,10 @@ body {
     margin-right: 5vw;
   }
 
+  .header {
+    height: 25%;
+  }
+
   header .primary-nav {
     margin-right: 5vw;
   }
