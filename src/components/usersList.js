@@ -17,7 +17,7 @@ class UsersList extends Component {
           return <User key={user.id} user={user} />;
         });
       };
-      return <div className="users-wrapper">{renderUsers()}</div>;
+      return <aside className="users-wrapper">{renderUsers()}</aside>;
     } else {
       return (
         <div className="noUser">

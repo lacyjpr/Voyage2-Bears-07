@@ -168,13 +168,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 100%;
   position: relative;
+  min-height: 100%;
+}
+
+@media only screen and (min-width: 799) and (max-width: 1476) {
+  aside .users-wrapper {
+    height: 60vh !important;
+    overflow: scroll;
+  }
 }
 
 .section {
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,9 +197,30 @@ body {
   ========================================
 */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1030px) and (min-width: 496px) {
+  header .tagline {
+    margin-right: 5vw;
+  }
+
+  header .primary-nav {
+    margin-right: 5vw;
+  }
+}
+
+@media only screen and (max-width: 495px) and (min-width: 377px) {
+  header .primary-nav {
+    margin-right: 5vw !important;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: 799px) {
   .header {
     height: 25%;
+  }
+
+  header .tagline {
+    margin-right: 5vw;
   }
 
   header .btn-logo {
@@ -326,6 +354,11 @@ body {
   ========================================
 */
 
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
 .primary-footer {
   margin-top: 5vh;
   color: #fff;
@@ -355,6 +388,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  height: 100%;
 }
 
 /*
@@ -668,18 +702,18 @@ h1 {
   ========================================
 */
 
-input,
-select,
-textarea {
-  font: 300 16px/22px 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
-    sans-serif;
+@media only screen and (max-width: 799px) {
+  .profile-group p {
+    width: 100% !important;
+  }
 }
 
 .profile {
   margin: 0 auto;
   margin-bottom: 5vh;
   padding: 10px;
-
+  font: 300 30px/22px 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
   width: 60vw;
 }
 
@@ -768,6 +802,24 @@ textarea {
   margin-bottom: 5vh;
 }
 
+.btn-delete {
+  background-color: red !important;
+  height: 5vh;
+  width: 75px;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 16px;
+}
+
 .btn-facebook {
   margin-top: 1em;
   background-color: #3b5998 !important;
@@ -833,13 +885,36 @@ textarea {
 */
 
 .message-container {
-  border: 2px solid #000;
+  border: 1px solid #c6c9cc;
   margin: 0 auto;
   margin-bottom: 5vh;
   padding: 10px;
-  background-color: #a9b2b9;
-  color: #fff;
+  background-color: #fff;
+  color: #648880;
   width: 60vw;
+}
+
+.message-container username,
+.message-container subject {
+  margin-bottom: 1vh !important;
+}
+
+.message-container .send-btn {
+  background-color: #293f50 !important;
+  height: 5vh;
+  width: 75px;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 16px;
 }
 
 .message-container:hover {
@@ -906,7 +981,7 @@ textarea {
 
 .modal {
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 10px;
   width: 60vw;
   margin: 0 auto;
   padding-top: 20vh;
@@ -956,13 +1031,17 @@ textarea {
   hi-res laptops and desktops
   ========================================
 */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 799px) {
   .map {
     width: 55vw;
     height: 38.5vw;
     display: table-cell;
     float: left;
     margin-right: 5vw;
+  }
+
+  .primary-nav {
+    margin-top: 2vh;
   }
 
   .users-wrapper {
@@ -975,7 +1054,7 @@ textarea {
 
   .userListing {
     width: 20vw;
-    height: 10vh;
+    height: 12vh;
     /* margin-bottom: 2vh; */
     display: table-cell;
     vertical-align: top;
@@ -995,5 +1074,11 @@ textarea {
 
   .header {
     margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (min-width: 1570px) {
+  .primary-footer {
+    top: 110vh !important;
   }
 }

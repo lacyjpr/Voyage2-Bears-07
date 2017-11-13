@@ -27,9 +27,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main-container">
-        <Header logout={this.logout} user={this.state.user} />
-        <Main className="main-app" user={this.state.user} />
+      <div>
+        <div className="main-container">
+          <Header logout={this.logout} user={this.state.user} />
+          <Main user={this.state.user} />
+        </div>
         <Footer />
       </div>
     );

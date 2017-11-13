@@ -35,10 +35,13 @@ class Message extends Component {
           MESSAGE:<br />
           {this.props.message.text}
         </div>
-        <button onClick={this.toggleShowSend}>Reply</button>
-        <div>
-          <button onClick={this.deleteMessage}>Delete</button>
-        </div>
+
+        <button className="send-btn" onClick={this.toggleShowSend}>
+          Reply
+        </button>
+        <button className="btn-delete" onClick={this.deleteMessage}>
+          Delete
+        </button>
 
         <Send
           showSend={this.state.showSend}
