@@ -1056,7 +1056,7 @@ h1 {
 
   .userListing {
     width: 20vw;
-    height: 12vh;
+    max-height: 15vh;
     /* margin-bottom: 2vh; */
     display: table-cell;
     vertical-align: top;
