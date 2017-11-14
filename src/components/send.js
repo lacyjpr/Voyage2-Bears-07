@@ -62,7 +62,7 @@ class Send extends Component {
             <input type="hidden" ref="sender" value={this.props.sender} />
             <input type="hidden" ref="recipient" value={this.props.recipient} />
 
-            <fieldset class="messages-form">
+            <fieldset className="messages-form">
               <label className="recipient-Name" htmlFor="recipient-name">
                 RECIPIENT
               </label>
