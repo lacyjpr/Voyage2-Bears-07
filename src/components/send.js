@@ -90,6 +90,7 @@ class Send extends Component {
                 className="edit-subject"
                 ref="subject"
                 placeholder="Subject"
+                autoFocus
                 required
               />
 
