@@ -30,9 +30,7 @@ class Profile extends Component {
     e.preventDefault();
     let { dispatch } = this.props;
     let userNameText = this.refs.editUserName.value;
-    console.log(userNameText);
     let locationText = this.refs.editLocation.value;
-    console.log(locationText);
 
     if (userNameText.length > 0 && locationText.length > 0) {
       dispatch(actions.startUpdateProfile(userNameText, locationText));
@@ -50,7 +48,7 @@ class Profile extends Component {
       return (
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <fieldset class="profile-group">
+            <fieldset className="profile-group">
               <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
