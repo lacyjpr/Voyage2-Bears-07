@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import firebase from 'firebase';
 import uuidv1 from 'uuid/v1';
 
-import './send.css';
-
 class Send extends Component {
   constructor(props) {
     super(props);
@@ -58,14 +56,16 @@ class Send extends Component {
       return null;
     }
     return (
-      <div className="backdrop">
+      <section className="backdrop">
         <div className="modal">
-          <h4 className="message-title">Message</h4>
           <form onSubmit={this.handleSubmit}>
             <input type="hidden" ref="sender" value={this.props.sender} />
             <input type="hidden" ref="recipient" value={this.props.recipient} />
-            <div>
-              <label htmlFor="recipient-name">Recipient</label>
+
+            <fieldset class="messages-form">
+              <label className="recipient-Name" htmlFor="recipient-name">
+                RECIPIENT
+              </label>
               <input
                 type="text"
                 id="recipient-name"
@@ -73,9 +73,10 @@ class Send extends Component {
                 value={this.props.recipientName}
                 readOnly
               />
-            </div>
-            <div>
-              <label htmlFor="sender-name">Sender</label>
+
+              <label className="sender-Name" htmlFor="sender-name">
+                SENDER
+              </label>
               <input
                 type="text"
                 id="sender-name"
@@ -83,8 +84,7 @@ class Send extends Component {
                 value={this.props.senderName}
                 readOnly
               />
-            </div>
-            <div>
+
               <input
                 type="text"
                 className="edit-subject"
@@ -92,15 +92,22 @@ class Send extends Component {
                 placeholder="Subject"
                 required
               />
-            </div>
-            <textarea className="message" ref="message" placeholder="message" />
-            <div />
-            <button>Send</button>
+
+              <textarea
+                className="message"
+                ref="message"
+                placeholder="Message"
+              />
+
+              <button className="send-btn">Send</button>
+            </fieldset>
           </form>
 
-          <button onClick={this.props.onClose}>Close</button>
+          <button className="close-btn" onClick={this.props.onClose}>
+            Close
+          </button>
         </div>
-      </div>
+      </section>
     );
   }
 }

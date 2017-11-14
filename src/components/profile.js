@@ -48,43 +48,41 @@ class Profile extends Component {
   renderProfile = () => {
     if (!this.props.profile || Object.keys(this.props.profile).length === 0) {
       return (
-        <div className="edit-profile">
+        <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="edit-user">User Name</label>
+            <fieldset class="profile-group">
+              <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
                 className="edit-user"
                 type="text"
                 ref="editUserName"
               />
-            </div>
 
-            <div>
-              <label htmlFor="edit-location">Location</label>
+              <label htmlFor="edit-location">LOCATION</label>
               <input
                 id="edit-location"
                 className="edit-location"
                 type="Text"
                 ref="editLocation"
               />
-            </div>
 
-            <button type="submit" className="submit-profile">
-              Submit Profile
-            </button>
+              <button type="submit" className="submit-profile">
+                Submit Profile
+              </button>
+            </fieldset>
           </form>
           <button className="cancelBtn" onClick={this.toggleEdit}>
             Cancel
           </button>
-        </div>
+        </section>
       );
     } else if (this.state.editable === true) {
       return (
-        <div className="edit-profile">
+        <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="edit-user">User Name</label>
+            <fieldset class="profile-group">
+              <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
                 className="edit-user"
@@ -92,10 +90,8 @@ class Profile extends Component {
                 ref="editUserName"
                 defaultValue={this.props.profile.username}
               />
-            </div>
 
-            <div>
-              <label htmlFor="edit-location">Location</label>
+              <label htmlFor="edit-location">LOCATION</label>
               <input
                 id="edit-location"
                 className="edit-location"
@@ -103,25 +99,29 @@ class Profile extends Component {
                 ref="editLocation"
                 defaultValue={this.props.profile.location}
               />
-            </div>
 
-            <button type="submit" className="submit-profile">
-              Submit Profile
-            </button>
+              <button type="submit" className="submit-profile">
+                Submit Profile
+              </button>
+            </fieldset>
           </form>
           <button className="cancelBtn" onClick={this.toggleEdit}>
             Cancel
           </button>
-        </div>
+        </section>
       );
     } else {
       return (
-        <div className="profile">
-          <p>User Name: {this.props.profile.username}</p>
-          <p>Location: {this.props.profile.location}</p>
-          <button className="editTodoBtn" onClick={this.toggleEdit}>
-            Edit
-          </button>
+        <div>
+          <section className="profile-group">
+            <h2>USER NAME: </h2>
+            <p>{this.props.profile.username}</p>
+            <h2>LOCATION: </h2>
+            <p>{this.props.profile.location}</p>
+            <button className="edit-profile-btn" onClick={this.toggleEdit}>
+              Edit
+            </button>
+          </section>
           <div>
             <Link to="/">Go Back!</Link>
           </div>
@@ -131,12 +131,7 @@ class Profile extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <h3>Profile</h3>
-        {this.renderProfile()}
-      </div>
-    );
+    return <div>{this.renderProfile()}</div>;
   }
 }
 

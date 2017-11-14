@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './map.css';
 
 class Map extends Component {
   componentDidMount() {
@@ -103,7 +102,7 @@ class Map extends Component {
   }
 
   render() {
-    return <div ref="map" className="map" />;
+    return <section ref="map" className="map section" />;
   }
 }
 

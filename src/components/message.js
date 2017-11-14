@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 
 import Send from './send';
-import './message.css';
 
 class Message extends Component {
   constructor(props) {
@@ -29,15 +28,21 @@ class Message extends Component {
 
   render() {
     return (
-      <div className="message">
-        <div className="username">From: {this.props.message.senderName}</div>
-        <div className="subject">Subject: {this.props.message.subject}</div>
+      <div className="message-container">
+        <div className="username">FROM: {this.props.message.senderName}</div>
+        <div className="subject">SUBJECT: {this.props.message.subject}</div>
         <div className="message-text">
-          Message:<br />
+          MESSAGE:<br />
           {this.props.message.text}
         </div>
-        <button onClick={this.toggleShowSend}>Reply</button>
-        <button onClick={this.deleteMessage}>Delete</button>
+
+        <button className="send-btn" onClick={this.toggleShowSend}>
+          Reply
+        </button>
+        <button className="btn-delete" onClick={this.deleteMessage}>
+          Delete
+        </button>
+
         <Send
           showSend={this.state.showSend}
           onClose={this.toggleShowSend}

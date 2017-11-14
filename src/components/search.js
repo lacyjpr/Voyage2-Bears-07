@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as actions from './../actions/actions';
 
 import HorizontalSlider from './horizontalSlider';
-import './search.css';
 
 class Search extends React.Component {
   constructor(props) {

@@ -20,11 +20,10 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <p>Meet and Code</p>
-        <Search />
-        <Map />
-        <UsersList />
+      <div className="main-app">
+        <Search className="section" />
+        <Map className="section" />
+        <UsersList className="section" />
       </div>
     );
   }
