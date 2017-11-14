@@ -50,7 +50,7 @@ class Profile extends Component {
       return (
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <fieldset class="profile-group">
+            <fieldset className="profile-group">
               <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
@@ -81,7 +81,7 @@ class Profile extends Component {
       return (
         <section className="edit-profile">
           <form onSubmit={this.handleSubmit}>
-            <fieldset class="profile-group">
+            <fieldset className="profile-group">
               <label htmlFor="edit-user">USER NAME</label>
               <input
                 id="edit-user"
