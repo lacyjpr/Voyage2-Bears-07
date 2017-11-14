@@ -238,7 +238,7 @@ body {
   .map {
     margin-bottom: 15px;
     width: 100vw;
-    height: 65vw;
+    height: 60vw;
     margin: 0 auto;
   }
 
@@ -1036,7 +1036,7 @@ h1 {
 @media only screen and (min-width: 799px) {
   .map {
     width: 55vw;
-    height: 38.5vw;
+    height: 33vw;
     display: table-cell;
     float: left;
     margin-right: 5vw;
@@ -1048,7 +1048,7 @@ h1 {
 
   .users-wrapper {
     width: 22vw;
-    height: 38.5vw;
+    height: 33vw;
     overflow: scroll;
     margin: 0 auto;
     /* border: 2px solid black; */
