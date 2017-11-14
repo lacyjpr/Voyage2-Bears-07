@@ -1003,7 +1003,7 @@ h1 {
 .message-title,
 #recipient-name,
 #sender-name {
-  width: 57vw;
+  width: 53vw;
   color: #888;
 }
 
@@ -1015,7 +1015,7 @@ h1 {
 .messages-form .send-btn {
   background-color: #293f50 !important;
   height: 5vh;
-  width: 5vw;
+  /* width: 10vw; */
   border: none;
   color: #ffffff;
   padding: 15px 32px;
