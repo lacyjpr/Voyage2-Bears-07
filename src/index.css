@@ -962,92 +962,184 @@ h1 {
   Send
   ========================================
 */
-.messages-form {
-  margin: 0 auto;
-  margin-bottom: 5vh;
-  padding: 10px;
-  max-height: 72vh;
-  width: 60vw;
+@media only screen and (max-width: 799px) {
+  .messages-form {
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    padding: 10px;
+    max-height: 72vh;
+    width: 60vw;
+  }
+
+  .messages-form label {
+    cursor: pointer;
+    font-weight: 400;
+    color: #648880;
+    display: block;
+  }
+
+  .messages-form input,
+  .messages-form select,
+  .messages-form textarea,
+  .messages-form p {
+    border: 1px solid #c6c9cc;
+    border-radius: 5px;
+    color: #888;
+    display: block;
+    margin: 5px 0 27px 0;
+    padding: 5px 5px;
+  }
+
+  .messages-form p {
+    width: 10vw;
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0px !important;
+  }
+
+  .modal {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 0vh !important;
+    padding: 0px !important;
+    white-space: pre-wrap;
+  }
+
+  .modal p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .edit-subject,
+  .message,
+  .recipient-Name,
+  .sender-Name,
+  .message-title,
+  #recipient-name,
+  #sender-name {
+    width: 51vw;
+    color: #888;
+  }
+
+  .send-btn,
+  .close-btn {
+    color: #888;
+  }
+
+  .messages-form .send-btn {
+    background-color: #293f50 !important;
+    height: 5vh;
+    /* width: 10vw; */
+    border: none;
+    color: #ffffff;
+    padding: 0 !important;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin: 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
 }
 
-.messages-form label {
-  cursor: pointer;
-  font-weight: 400;
-  color: #648880;
-  display: block;
-}
+@media only screen and (min-width: 800px) {
+  .messages-form {
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    padding: 10px;
+    max-height: 72vh;
+    width: 60vw;
+  }
 
-.messages-form input,
-.messages-form select,
-.messages-form textarea,
-.messages-form p {
-  border: 1px solid #c6c9cc;
-  border-radius: 5px;
-  color: #888;
-  display: block;
-  margin: 5px 0 27px 0;
-  padding: 5px 5px;
-}
+  .messages-form label {
+    cursor: pointer;
+    font-weight: 400;
+    color: #648880;
+    display: block;
+  }
 
-.messages-form p {
-  width: 10vw;
-}
+  .messages-form input,
+  .messages-form select,
+  .messages-form textarea,
+  .messages-form p {
+    border: 1px solid #c6c9cc;
+    border-radius: 5px;
+    color: #888;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 50px;
-}
+  .messages-form p {
+    width: 10vw;
+  }
 
-.modal {
-  background-color: #fff;
-  border-radius: 10px;
-  width: 60vw;
-  margin: 0 auto;
-  padding-top: 20vh;
-  padding: 10px;
-  white-space: pre-wrap;
-}
+  .backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 50px;
+  }
 
-.modal p {
-  padding: 0;
-  margin: 0;
-}
+  .modal {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 20vh;
+    padding: 10px;
+    white-space: pre-wrap;
+  }
 
-.edit-subject,
-.message,
-.recipient-Name,
-.sender-Name,
-.message-title,
-#recipient-name,
-#sender-name {
-  width: 51vw;
-  color: #888;
-}
+  .modal p {
+    padding: 0;
+    margin: 0;
+  }
 
-.send-btn,
-.close-btn {
-  color: #888;
-}
+  .edit-subject,
+  .message,
+  .recipient-Name,
+  .sender-Name,
+  .message-title,
+  #recipient-name,
+  #sender-name {
+    width: 51vw;
+    color: #888;
+  }
 
-.messages-form .send-btn {
-  background-color: #293f50 !important;
-  height: 5vh;
-  /* width: 10vw; */
-  border: none;
-  color: #ffffff;
-  padding: 15px 32px;
-  text-align: center;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  margin: 5px 0 !important;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
+  .send-btn,
+  .close-btn {
+    color: #888;
+  }
+
+  .messages-form .send-btn {
+    background-color: #293f50 !important;
+    height: 5vh;
+    /* width: 10vw; */
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin: 5px 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
 }
 
 /*
