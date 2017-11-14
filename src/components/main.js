@@ -50,7 +50,7 @@ class Main extends Component {
   render() {
     return (
       <main>
-        <Switch>
+        <Switch className="main-app">
           <Route exact path="/" component={Home} />
           <Route
             path="/signin"

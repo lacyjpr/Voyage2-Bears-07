@@ -403,14 +403,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
+  height: 100%;
 }
 
-primary-footer {
-  grid-row-start: 2;
-  grid-row-end: 3;
+.main-container {
+  min-height: 100%;
+  position: relative;
+}
+
+body .main-container .main-app {
+  padding-bottom: 12vh;
+}
+
+body .main-container .primary-footer {
+  position: absolute;
+  bottom: 0;
 }
 
 /*
@@ -766,39 +773,58 @@ h1 {
   width: 10vw;
 }
 
-/* .profile:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.btn-submit {
+  background-color: #5bc0de !important;
+  height: 5vh;
+  width: 75px;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
 }
 
-.profile p {
-  padding: 10px 0 10px 0;
+.btn-edit {
+  background-color: green !important;
+  height: 5vh;
+  width: 75px;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 16px;
 }
 
-.edit-profile-btn {
-  padding: 10px;
+.btn-cancel {
+  background-color: black !important;
+  height: 5vh;
+  width: 75px;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 3px;
 }
-
-.edit-profile {
-  border: 2px solid #000;
-  margin: 0 auto;
-  margin-bottom: 5vh;
-  padding: 10px;
-  background-color: #a9b2b9;
-  color: #fff;
-  width: 60vw;
-}
-
-.edit-profile:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.edit-user {
-  background-color: #a9b2b9;
-}
-
-.edit-location {
-  background-color: #a9b2b9;
-} */
 
 /*
   ========================================

@@ -67,14 +67,14 @@ class Profile extends Component {
                 ref="editLocation"
               />
 
-              <button type="submit" className="submit-profile">
+              <button type="submit" className="btn-profile">
                 Submit Profile
+              </button>
+              <button className="btn-cancel" onClick={this.toggleEdit}>
+                Cancel
               </button>
             </fieldset>
           </form>
-          <button className="cancelBtn" onClick={this.toggleEdit}>
-            Cancel
-          </button>
         </section>
       );
     } else if (this.state.editable === true) {
@@ -99,15 +99,16 @@ class Profile extends Component {
                 ref="editLocation"
                 defaultValue={this.props.profile.location}
               />
-
-              <button type="submit" className="submit-profile">
-                Submit Profile
-              </button>
+              <section className="profile-buttons">
+                <button type="submit" className="btn-submit">
+                  Submit Profile
+                </button>
+                <button className="btn-cancel" onClick={this.toggleEdit}>
+                  Cancel
+                </button>
+              </section>
             </fieldset>
           </form>
-          <button className="cancelBtn" onClick={this.toggleEdit}>
-            Cancel
-          </button>
         </section>
       );
     } else {
@@ -118,7 +119,7 @@ class Profile extends Component {
             <p>{this.props.profile.username}</p>
             <h2>LOCATION: </h2>
             <p>{this.props.profile.location}</p>
-            <button className="edit-profile-btn" onClick={this.toggleEdit}>
+            <button className="btn-edit" onClick={this.toggleEdit}>
               Edit
             </button>
           </section>
