@@ -21,7 +21,8 @@ class UsersList extends Component {
     } else {
       return (
         <div className="noUser">
-          You must sign in & complete your profile to view & message users!
+          You must sign in & complete your profile (Click PROFILE) to view &
+          message users!
         </div>
       );
     }
