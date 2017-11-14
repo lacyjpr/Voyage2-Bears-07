@@ -8,7 +8,7 @@ class Header extends Component {
         <Link to="/" className="btn-logo btn styleLink">
           Meet and Code
         </Link>
-        <div class="header-right">
+        <div className="header-right">
           <nav className="nav primary-nav">
             <div>
               {this.props.user ? (
@@ -51,7 +51,7 @@ class Header extends Component {
               )}
             </div>
           </nav>
-          <h3 class="tagline">Find and Work with Coders in your Area!</h3>
+          <h3 className="tagline">Find and Work with Coders in your Area!</h3>
         </div>
       </header>
     );

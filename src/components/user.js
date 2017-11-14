@@ -23,7 +23,7 @@ class User extends Component {
       <aside className="userListing section">
         <div className="userlist-username">{this.props.user.username}</div>
         <div className="userlist-location">{this.props.user.location}</div>
-        <button class="userlist-message" onClick={this.toggleShowSend}>
+        <button className="userlist-message" onClick={this.toggleShowSend}>
           Message
         </button>
         <Send
