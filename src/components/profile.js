@@ -66,7 +66,7 @@ class Profile extends Component {
               />
 
               <button type="submit" className="btn-submit">
-                Submit Profile
+                Submit
               </button>
               <button className="btn-cancel" onClick={this.toggleEdit}>
                 Cancel
