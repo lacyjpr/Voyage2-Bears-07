@@ -373,7 +373,7 @@ body {
   bottom: 0;
 }
 
-@media only screen and (max-width: 799px) and (min-width: 450px) {
+@media only screen and (max-width: 799px) {
   .primary-footer {
     margin-bottom: -400px !important;
   }
