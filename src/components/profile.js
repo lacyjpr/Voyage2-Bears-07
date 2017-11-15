@@ -65,7 +65,7 @@ class Profile extends Component {
                 ref="editLocation"
               />
 
-              <button type="submit" className="btn-profile">
+              <button type="submit" className="btn-submit">
                 Submit Profile
               </button>
               <button className="btn-cancel" onClick={this.toggleEdit}>
