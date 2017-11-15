@@ -1066,9 +1066,16 @@ h1 {
     color: #888;
   }
 
-  .send-btn,
-  .close-btn {
+  .send-btn {
     color: #888;
+  }
+
+  .close-btn {
+    color: #fff;
+    height: 5vh;
+    width: 75px;
+    background-color: #f00 !important;
+    margin: 0 10px 10px 10px;
   }
 
   .messages-form .send-btn {
