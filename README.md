@@ -1,5 +1,5 @@
 # Meet and Code
-Web app that allows coders from the freeCodeCamp and the Chingu community to meet and code together
+Web app that allows coders from the freeCodeCamp and the Chingu community to meet, message and code together
 
 Live site: <https://meet-and-code.herokuapp.com/>
 
